@@ -1,0 +1,2213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0080)http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html -->
+<HTML lang=en xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><HEAD><TITLE>Dr. Watson postmortem debugger problem[RESOLVED] - Geeks to Go Forums</TITLE>
+<SCRIPT src="Very Imp_files/urchin.js" type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-103758-1";
+urchinTracker();
+</SCRIPT>
+
+<META http-equiv=content-type content="text/html; charset=iso-8859-1"><LINK 
+href="favicon.ico" rel="shortcut icon"><LINK title="The Waiting Room Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=25" 
+type=application/rss+xml rel=alternate><LINK title="Off-topic Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=26" 
+type=application/rss+xml rel=alternate><LINK title="Video Editing Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=23" 
+type=application/rss+xml rel=alternate><LINK 
+title="How-To Guides and Tutorials Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=24" 
+type=application/rss+xml rel=alternate><LINK 
+title="Programming (C#, C++, JAVA, VB, .NET etc...) Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=22" 
+type=application/rss+xml rel=alternate><LINK title="Games Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=21" 
+type=application/rss+xml rel=alternate><LINK 
+title="Windows XP, 2000, 2003, XT Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=10" 
+type=application/rss+xml rel=alternate><LINK title="Windows 95, 98, ME Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=11" 
+type=application/rss+xml rel=alternate><LINK title="Windows Vista Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=12" 
+type=application/rss+xml rel=alternate><LINK 
+title="All Other Operating Systems Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=13" 
+type=application/rss+xml rel=alternate><LINK 
+title="Remove Malware &amp; Badware - HiJackThis Logs Go Here Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=14" 
+type=application/rss+xml rel=alternate><LINK title="Applications Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=20" 
+type=application/rss+xml rel=alternate><LINK title="Networking Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=19" 
+type=application/rss+xml rel=alternate><LINK title="Internet and Browsers Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=15" 
+type=application/rss+xml rel=alternate><LINK 
+title="Web Design &amp; Web Hosting Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=16" 
+type=application/rss+xml rel=alternate><LINK 
+title="Hardware, Components and Peripherals Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=17" 
+type=application/rss+xml rel=alternate><LINK 
+title="System Building and Upgrading Forum" 
+href="http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=18" 
+type=application/rss+xml rel=alternate>
+<STYLE type=text/css media=all>@import url( http://www.geekstogo.com/forum/style_images/css_16.css );
+</STYLE>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=ipbwrapper>
+<DIV id=submenu>
+<DIV 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 7px"><A 
+title="Home Page" href="http://www.geekstogo.com/">Home</A> | <A 
+title="Tech Support Forums" 
+href="http://www.geekstogo.com/forum/index.php">Forums</A> | <A 
+title="Free Member Blogs" 
+href="http://www.geekstogo.com/forum/index.php?automodule=blog">Blogs</A> | <A 
+title="File Downloads" 
+href="http://www.geekstogo.com/modules.php?modid=5">Downloads</A> | <A 
+title="GeeksToGo Webhosting" href="http://www.gtghosting.com/">Webhosting</A> | 
+<A title="Startup Processes Database" 
+href="http://startuplist.geekstogo.com/">Process List</A> | <A 
+title="Guides and Tutorials" 
+href="http://www.geekstogo.com/forum/Guides-and-Tutorials-f99.html">Guides</A> | 
+<A title="Web Links" 
+href="http://www.geekstogo.com/forum/index.php?autocom=links">Links</A></DIV></DIV>
+<DIV id=logostrip>
+<DIV style="FLOAT: right; WIDTH: 503px; MARGIN-RIGHT: 10px; HEIGHT: 88px">
+<DIV 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 20px; PADDING-BOTTOM: 0px; MARGIN-RIGHT: 50px; PADDING-TOP: 4px; TEXT-ALIGN: right">
+<P><!-- START CODE -->
+<FORM action=http://lb.bcentral.com/ex/manage/subscriberprefs.aspx 
+method=post><FONT face="arial, helvetica" color=#ffffff ; font><B>New!</B> - 
+Register for Geeks to Go Newsletter: </FONT><BR><INPUT name=email> <INPUT 
+type=hidden value=57447 name=customerid> <INPUT style="FONT-WEIGHT: bold; COLOR: green; BACKGROUND-COLOR: white" type=submit value="Sign up"> 
+</FORM><!-- END CODE --><!-- <font color="#FFFFFF">A Free Computer Help Community</font> --></P></DIV></DIV><A 
+href="http://www.geekstogo.com/"><IMG alt="Geeks To Go" 
+src="Very Imp_files/logostrip_l.gif"></A></DIV>
+<DIV id=subsubmenu>
+<DIV style="PADDING-TOP: 6px">
+<DIV style="FLOAT: right"><STRONG><EM><!--ipb.rightlinks.start--><A 
+title="IRC Chat Room" 
+href="http://www.geekstogo.com/forum/index.php?automodule=javairc">Live 
+Chat!</A> · <A title="Help Documents" 
+href="http://geekstogo.com/forum/index.php?act=Help">Help</A> · <A 
+title="Search the Forums" 
+href="http://geekstogo.com/forum/index.php?act=Search&amp;f=">Search</A> · <A 
+title="Member List" 
+href="http://geekstogo.com/forum/index.php?act=Members">Members</A> · <A 
+title="View Calendar" 
+href="http://geekstogo.com/forum/index.php?act=calendar">Calendar</A></EM></STRONG></DIV><STRONG><EM>&nbsp;·&nbsp;<A 
+title="Usage signifies acceptance of our Terms of Use" 
+href="http://geekstogo.com/forum/index.php?act=boardrules">Terms of 
+Use</A></EM></STRONG></DIV></DIV>
+<DIV id=ipbwrapper2>
+<DIV id=ipbwrapper3><!--ipb.javascript.start-->
+<SCRIPT type=text/javascript>
+ //<![CDATA[
+ var ipb_var_st            = "";
+ var ipb_lang_tpl_q1       = "Please enter a page number to jump to between 1 and";
+ var ipb_var_s             = "f310e1c4f821185de90a2d41d1438472";
+ var ipb_var_phpext        = "php";
+ var ipb_var_base_url      = "http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&";
+ var ipb_var_image_url     = "style_images/gtg_defaul";
+ var ipb_input_f           = "37";
+ var ipb_input_t           = "10334";
+ var ipb_input_p           = "";
+ var ipb_var_cookieid      = "";
+ var ipb_var_cookie_domain = ".geekstogo.com";
+ var ipb_var_cookie_path   = "/";
+ var ipb_md5_check         = "880ea6a14ea49e853634fbdc5015a024";
+ var ipb_new_msgs          = 0;
+ var use_enhanced_js       = 1;
+var use_charset = "iso-8859-1";
+ var ipb_myass_chars_lang = "Not enough characters";
+ //]]>
+</SCRIPT>
+
+<SCRIPT src="Very Imp_files/ipb_global.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="Very Imp_files/ips_menu.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="Very Imp_files/ips_menu_html.js" type=text/javascript></SCRIPT>
+<!--ipb.javascript.end-->
+<DIV class=borderwrap>
+<SCRIPT src="Very Imp_files/ips_xmlhttprequest.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Very Imp_files/ipb_global_xmlenhanced.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Very Imp_files/dom-drag.js" type=text/javascript></SCRIPT>
+
+<DIV id=get-myassistant style="DISPLAY: none; WIDTH: 400px; TEXT-ALIGN: left">
+<DIV class=borderwrap>
+<DIV class=maintitle id=myass-drag title="Click and hold to drag this window">
+<DIV style="FLOAT: right"><A 
+onclick='document.getElementById("get-myassistant").style.display="none"' 
+href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">[X]</A></DIV>
+<DIV>My Assistant</DIV></DIV>
+<DIV id=myass-content></DIV></DIV></DIV>
+<DIV id=loading-layer 
+style="BORDER-RIGHT: #000 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #000 1px solid; DISPLAY: none; PADDING-LEFT: 10px; BACKGROUND: #fff; PADDING-BOTTOM: 10px; BORDER-LEFT: #000 1px solid; WIDTH: 200px; PADDING-TOP: 10px; BORDER-BOTTOM: #000 1px solid; HEIGHT: 50px; TEXT-ALIGN: center">
+<DIV id=loading-layer-text style="FONT-WEIGHT: bold">Loading. Please 
+Wait...</DIV><BR><IMG src="Very Imp_files/loading.gif" border=0></DIV><!-- / End board header -->
+<DIV id=userlinksguest>
+<P class=pcen><B>Hello Guest, Why Not Register Today?</B> ( <A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Login&amp;CODE=00">Log 
+In</A> | <A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Reg&amp;CODE=00">Register</A> 
+) <BR><FONT color=#0d2975>Welcome to the Geeks to Go Tech Support Forum! Here 
+you'll find free, friendly help and support for all your computing questions. 
+Once registered, you'll have the ability to post your question(s) in the 
+appropriate category below. Additionally, if you can assist another member by 
+sharing your computing knowledge, please feel free to post a reply! Best of all 
+- <A class=a5 
+href="http://www.geekstogo.com/forum/index.php?act=Reg&amp;CODE=00">Registration</A> 
+and all assistance, is FREE! <A class=a5 
+href="http://www.geekstogo.com/forum/index.php?act=Reg&amp;CODE=00">Click Here 
+to Register Now.</A></FONT></P></DIV></DIV>
+<DIV id=userlinks><IMG src="Very Imp_files/icon14.gif" align=middle border=0> 
+Spyware, Virus, Trojan, Rootkit? For malware removal help, <A 
+href="http://www.geekstogo.com/forum/You-Must-Read-This-Before-Posting-A-Hijackthis-Log-t2852.html">Start 
+Here</A>. System clean? <A 
+href="http://www.geekstogo.com/forum/index.php?autocom=custom&amp;page=How_did_I">How 
+to secure your PC</A>. <BR><IMG src="Very Imp_files/icon13.gif" align=middle 
+border=0> To avoid confusion, please do not post your question in someone else's 
+topic. Start your own. Stay with your original topic when posting a follow up. 
+Need help starting a new topic? <A 
+href="http://www.geekstogo.com/forum/index.php?act=SR&amp;f=15">Click 
+Here</A>.<BR>
+<CENTER>
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-8494067626122848";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="7986842971";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0D2975";
+google_color_url = "0D2975";
+google_color_text = "0D2975";
+//--></SCRIPT>
+
+<SCRIPT src="Very Imp_files/show_ads.js" type=text/javascript>
+</SCRIPT>
+</CENTER></DIV>
+<DIV id=navstrip>&gt;&nbsp;<A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=idx">Geeks 
+to Go Forums</A>&nbsp;&gt;&nbsp;<A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showforum=44">Internet</A>&nbsp;&gt;&nbsp;<A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showforum=37">Malware 
+Removal - HiJackThis Logs Go Here</A></DIV><!--IBF.NEWPMBOX--><!-- google_ad_section_start -->
+<SCRIPT type=text/javascript>
+<!--
+var ipb_lang_tt_prompt = "Manually copy the direct link to this post below to store the link in your computer's clipboard";
+var ipb_lang_js_del_1  = "Are you sure you want to delete this message?";
+var ipb_lang_js_del_2  = "Ok, no action has been taken";
+var addquotebutton     = "style_images/gtg_defaul/p_mq_add.gif";
+var removequotebutton  = "style_images/gtg_defaul/p_mq_remove.gif";
+var unselectedbutton = "style_images/gtg_defaul/topic_unselected.gif";
+var selectedbutton   = "style_images/gtg_defaul/topic_selected.gif";
+var lang_gobutton    = "With Selected";
+var lang_suredelete  = "Are you sure you wish to delete these posts?";
+var js_error_no_permission = "Sorry, you do not have permission to edit that post";
+-->
+</SCRIPT>
+
+<SCRIPT src="Very Imp_files/ipb_topic.js" type=text/javascript></SCRIPT>
+<A name=top></A><!-- Show FAQ/Forum Rules -->
+<DIV class=borderwrap>
+<H3><IMG height=8 alt=">" src="Very Imp_files/nav_m.gif" width=8 
+border=0>&nbsp;Malware Removal Forum Rules</H3>
+<P><IMG height=19 src="Very Imp_files/icon11.gif" width=19 border=0> <A 
+href="http://www.geekstogo.com/forum/You_Must_Read_This_Before_Posting_A_Hijackthis_Log-t2852.html">Click 
+Here</A> before posting a Hijack This log. <BR><IMG height=19 
+src="Very Imp_files/icon11.gif" width=19 border=0> The "Topic Title" should 
+contain the name of the infection that you are having a problem with e.g. 
+Winhound, Spyaxe etc. Use the "Topic Description" to include more details. This 
+will help you get faster responses as some people are more familiar with certain 
+infections. <BR><IMG height=19 src="Very Imp_files/icon11.gif" width=19 
+border=0><B> Please only post your topic once</B>. Duplicate posts will be 
+closed, and just create additional work for the staff members trying to help 
+you. <BR><IMG height=19 src="Very Imp_files/icon11.gif" width=19 border=0> <B>Do 
+not 'bump' or reply to your topic</B>. We look first for posts with no replies, 
+and we start with the oldest posts and work forward. Bumping will delay a 
+reply.</P></DIV><!-- End FAQ/Forum Rules -->
+<TABLE class=ipbtable cellSpacing=0>
+  <TBODY>
+  <TR>
+    <TD style="PADDING-LEFT: 0px" vAlign=center noWrap width="40%">
+      <DIV><SPAN class=pagelink id=page-jump>2 Pages <IMG title="Open Menu" 
+      alt=V src="Very Imp_files/menu_action_down.gif" 
+      border=0></SPAN>&nbsp;&nbsp;<SPAN class=pagecurrent>1</SPAN>&nbsp;<SPAN 
+      class=pagelink><A title=2 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;st=15">2</A></SPAN>&nbsp;<SPAN 
+      class=pagelink><A title="Next page" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;st=15">&gt;</A></SPAN>
+      <SCRIPT type=text/javascript>
+//<![CDATA[
+ipb_pages_shown++;
+var pgjmp = document.getElementById( 'page-jump' );
+pgjmp.id  = 'page-jump-'+ipb_pages_shown;
+ipb_pages_array[ ipb_pages_shown ] = new Array( 'http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334', 15, 25 );
+menu_build_menu(
+	pgjmp.id,
+	new Array(  "--NODIV--<div onmouseover='pages_st_focus("+ipb_pages_shown+")' class='popupmenu-category' align='center'>Jump to Page</div>",
+				"<input type='text' size='5' name='st' id='st-"+ipb_pages_shown+"' /> <input type='button' class='button' onclick='do_multi_page_jump("+ipb_pages_shown+");' value='Go' />" ) );
+//]]>
+</SCRIPT>
+       &nbsp;<!--
+	( <a href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=ST&amp;f=37&amp;t=10334&amp;view=getnewpost">Go to first unread post</a> )
+--></DIV></TD>
+    <TD class=nopad 
+    style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 0px" 
+    vAlign=center align=right width="60%"><IMG alt="Closed Topic" 
+      src="Very Imp_files/t_closed.gif" border=0><A title="Start a new topic" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=00&amp;f=37"><IMG 
+      alt="Start new topic" src="Very Imp_files/t_new.gif" 
+  border=0></A></TD></TR></TBODY></TABLE>
+<DIV class=borderwrap>
+<DIV class=maintitle 
+style="PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px"><!-- TABLE FIX FOR MOZILLA WRAPPING-->
+<TABLE 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD style="WORD-WRAP: break-word" width="99%" ?>
+      <DIV><IMG height=8 alt=">" src="Very Imp_files/nav_m.gif" width=8 
+      border=0>&nbsp;<B>Dr. Watson postmortem debugger problem[RESOLVED]</B>, 
+      help!</DIV></TD>
+    <TD noWrap align=right width="1%">
+      <DIV class=popmenubutton id=topicmenu-options><A 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#topicoptions">Options</A> 
+      <IMG title="Open Menu" alt=V src="Very Imp_files/menu_action_down.gif" 
+      border=0></DIV></TD>
+    <TD noWrap align=right width="1%"></TD></TR></TBODY></TABLE></DIV><!--{IBF.POLL}-->
+<SCRIPT type=text/javascript>
+  menu_build_menu(
+  "topicmenu-options",
+  new Array( img_item + " <a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=usercp&amp;CODE=start_subs&amp;method=topic&amp;tid=10334'>Track this topic</a>",
+  			 img_item + " <a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Forward&amp;f=37&amp;t=10334'>Email this topic</a>",
+  			 img_item + " <a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Print&amp;client=printer&amp;f=37&amp;t=10334'>Print this topic</a>",
+                         img_item + " <a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Print&amp;client=choose&amp;f=37&amp;t=10334'>Download this topic</a>",
+  			 img_item + " <a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=usercp&amp;CODE=start_subs&amp;method=forum&amp;fid=37'>Subscribe to this forum</a>",
+  			 "--NODIV--<div class='popupmenu-category' align='center'>Display Modes</div>",
+  			 img_item + " <a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;mode=threaded'>Switch to: Outline</a>",
+  			 img_item + " <strong><em><a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;mode=linear'>Standard</a></em></strong>",
+  			 img_item + " <a href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;mode=linearplus'>Switch to: Linear+</a>"
+		    ) );
+ </SCRIPT>
+<!--Begin Msg Number 47700-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry47700></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Feb 24 2005, 05:20 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(47700); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#1</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-47700 vAlign=top width="100%"><!-- THE POST 47700 -->
+      <DIV class=postcolor id=post-47700>Best I can tell I'm suppose to post 
+      this so someone can tell me how to fix this Dr. WAtson error 
+      crap.<BR><BR>I ran the HiJackthis and here it is... SOMEBODY 
+      HELP!<BR><BR>Logfile of HijackThis v1.99.1<BR>Scan saved at 6:14:09 PM, on 
+      2/24/2005<BR>Platform: Windows XP SP2 (WinNT 5.01.2600)<BR>MSIE: Internet 
+      Explorer v6.00 SP2 (6.00.2900.2180)<BR><BR>Running 
+      processes:<BR>C:\WINNT\System32\smss.exe<BR>C:\WINNT\system32\winlogon.exe<BR>C:\WINNT\system32\services.exe<BR>C:\WINNT\system32\lsass.exe<BR>C:\WINNT\system32\svchost.exe<BR>C:\WINNT\System32\svchost.exe<BR>C:\Program 
+      Files\Common Files\Symantec Shared\ccSetMgr.exe<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SNDSrvc.exe<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>C:\Program Files\Common 
+      Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>C:\WINNT\system32\spoolsv.exe<BR>C:\Program 
+      Files\Norton AntiVirus\navapsvc.exe<BR>C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>C:\Program Files\Common Files\Symantec 
+      Shared\CCPD-LC\symlcsvc.exe<BR>C:\WINNT\netni32.exe<BR>C:\WINNT\Explorer.EXE<BR>C:\WINNT\system32\atiptaxx.exe<BR>C:\WINNT\GWMDMMSG.exe<BR>C:\Program 
+      Files\Synaptics\SynTP\SynTPLpr.exe<BR>C:\Program 
+      Files\Synaptics\SynTP\SynTPEnh.exe<BR>C:\WINNT\GWHotKey.exe<BR>C:\Program 
+      Files\Adaptec\Easy CD Creator 5\DirectCD\DirectCD.exe<BR>C:\Program 
+      Files\Common Files\Microsoft Shared\Works Shared\WkUFind.exe<BR>C:\Program 
+      Files\Microsoft 
+      AntiSpyware\gcasServ.exe<BR>C:\WINNT\addqb.exe<BR>C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\2C.tmp.exe<BR>C:\WINNT\System32\tibs5.exe<BR>C:\Program 
+      Files\Common Files\Symantec Shared\ccApp.exe<BR>C:\Documents and 
+      Settings\Administrator\Application 
+      Data\tsad.exe<BR>C:\WINNT\system32\?hkdsk.exe<BR>C:\WINNT\system32\wscript.exe<BR>C:\Program 
+      Files\Microsoft AntiSpyware\gcasDtServ.exe<BR>C:\Program Files\Internet 
+      Explorer\iexplore.exe<BR>C:\Documents and Settings\Administrator\Local 
+      Settings\Temporary Internet 
+      Files\Content.IE5\G9F7YXN4\HijackThis[1].exe<BR>C:\Program 
+      Files\Messenger\msmsgs.exe<BR><BR>R1 - HKCU\Software\Microsoft\Internet 
+      Explorer,SearchURL = www.msn.com<BR>R1 - HKCU\Software\Microsoft\Internet 
+      Explorer\Main,Search Bar = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,SearchURL = 
+      about:blank<BR>R1 - HKLM\Software\Microsoft\Internet 
+      Explorer\Main,Default_Page_URL = about:blank<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Default_Search_URL = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Bar = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,SearchURL = 
+      about:blank<BR>R1 - HKCU\Software\Microsoft\Internet 
+      Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R0 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Start Page_bak = 
+      about:blank<BR>R3 - Default URLSearchHook is missing<BR>O2 - BHO: NAV 
+      Helper - {BDF3E430-B101-42AD-A544-FADC6B084872} - C:\Program Files\Norton 
+      AntiVirus\NavShExt.dll<BR>O2 - BHO: (no name) - 
+      {C1A798BF-49B8-F852-FB29-3EC175C39354} - C:\WINNT\javaas.dll<BR>O3 - 
+      Toolbar: Norton AntiVirus - {42CDD1BF-3FFB-4238-8AD1-7859DF00B1D6} - 
+      C:\Program Files\Norton AntiVirus\NavShExt.dll<BR>O4 - HKLM\..\Run: 
+      [ATIModeChange] Ati2mdxx.exe<BR>O4 - HKLM\..\Run: [AtiPTA] 
+      atiptaxx.exe<BR>O4 - HKLM\..\Run: [GWMDMMSG] GWMDMMSG.exe<BR>O4 - 
+      HKLM\..\Run: [SynTPLpr] C:\Program 
+      Files\Synaptics\SynTP\SynTPLpr.exe<BR>O4 - HKLM\..\Run: [SynTPEnh] 
+      C:\Program Files\Synaptics\SynTP\SynTPEnh.exe<BR>O4 - HKLM\..\Run: 
+      [Multi-function Keyboard] GWHotKey.exe<BR>O4 - HKLM\..\Run: 
+      [AdaptecDirectCD] "C:\Program Files\Adaptec\Easy CD Creator 
+      5\DirectCD\DirectCD.exe"<BR>O4 - HKLM\..\Run: [Microsoft Works Portfolio] 
+      C:\Program Files\Microsoft Works\WksSb.exe /AllUsers<BR>O4 - HKLM\..\Run: 
+      [Microsoft Works Update Detection] C:\Program Files\Common Files\Microsoft 
+      Shared\Works Shared\WkUFind.exe<BR>O4 - HKLM\..\Run: [MoneyStartUp10.0] 
+      "C:\Program Files\Microsoft Money\System\Activation.exe"<BR>O4 - 
+      HKLM\..\Run: [WorksFUD] C:\Program Files\Microsoft Works\wkfud.exe<BR>O4 - 
+      HKLM\..\Run: [QuickTime Task] "C:\Program Files\QuickTime\qttask.exe" 
+      -atboottime<BR>O4 - HKLM\..\Run: [gcasServ] "C:\Program Files\Microsoft 
+      AntiSpyware\gcasServ.exe"<BR>O4 - HKLM\..\Run: [addqb.exe] 
+      C:\WINNT\addqb.exe<BR>O4 - HKLM\..\Run: [2C.tmp] 
+      C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\2C.tmp.exe 0 28129<BR>O4 - HKLM\..\Run: 
+      [tibs5] C:\WINNT\System32\tibs5.exe<BR>O4 - HKLM\..\Run: [Symantec 
+      NetDriver Monitor] C:\PROGRA~1\SYMNET~1\SNDMon.exe<BR>O4 - HKLM\..\Run: 
+      [ccApp] "C:\Program Files\Common Files\Symantec Shared\ccApp.exe"<BR>O4 - 
+      HKLM\..\Run: [2C.tmp.exe] C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\2C.tmp.exe 2 
+      28129<BR>O4 - HKCU\..\Run: [Arma] C:\Documents and 
+      Settings\Administrator\Application Data\tsad.exe<BR>O4 - HKCU\..\Run: 
+      [Ygtstsm] c:\WINNT\System32\j?vaw.exe<BR>O4 - HKCU\..\Run: [Mzsupbhv] 
+      c:\WINNT\system32\w?wexec.exe<BR>O4 - HKCU\..\Run: [Uxfwte] 
+      c:\WINNT\system32\n?tepad.exe<BR>O4 - HKCU\..\Run: [Anoagevy] 
+      C:\WINNT\system32\?hkdsk.exe<BR>O8 - Extra context menu item: &amp;Google 
+      Search - res://c:\program 
+      files\google\GoogleToolbar1.dll/cmsearch.html<BR>O8 - Extra context menu 
+      item: Backward Links - res://c:\program 
+      files\google\GoogleToolbar1.dll/cmbacklinks.html<BR>O8 - Extra context 
+      menu item: Cached Snapshot of Page - res://c:\program 
+      files\google\GoogleToolbar1.dll/cmcache.html<BR>O8 - Extra context menu 
+      item: Similar Pages - res://c:\program 
+      files\google\GoogleToolbar1.dll/cmsimilar.html<BR>O8 - Extra context menu 
+      item: Translate into English - res://c:\program 
+      files\google\GoogleToolbar1.dll/cmtrans.html<BR>O9 - Extra button: (no 
+      name) - {CD67F990-D8E9-11d2-98FE-00C0F0318AFE} - (no file)<BR>O9 - Extra 
+      button: MoneySide - {E023F504-0C5A-4750-A1E7-A9046DEA8A21} - C:\Program 
+      Files\Microsoft Money\System\mnyviewer.dll<BR>O9 - Extra button: Messenger 
+      - {FB5F1910-F110-11d2-BB9E-00C04F795683} - C:\Program 
+      Files\Messenger\msmsgs.exe<BR>O9 - Extra 'Tools' menuitem: Windows 
+      Messenger - {FB5F1910-F110-11d2-BB9E-00C04F795683} - C:\Program 
+      Files\Messenger\msmsgs.exe<BR>O12 - Plugin for .spop: C:\Program 
+      Files\Internet Explorer\Plugins\NPDocBox.dll<BR>O15 - Trusted Zone: 
+      *.05p.com<BR>O15 - Trusted Zone: *.awmdabest.com<BR>O15 - Trusted Zone: 
+      *.blazefind.com<BR>O15 - Trusted Zone: *.clickspring.net<BR>O15 - Trusted 
+      Zone: *.flingstone.com<BR>O15 - Trusted Zone: 
+      *.frame.crazywinnings.com<BR>O15 - Trusted Zone: *.i-lookup.com<BR>O15 - 
+      Trusted Zone: *.mt-download.com<BR>O15 - Trusted Zone: 
+      *.my-internet.info<BR>O15 - Trusted Zone: *.offshoreclicks.com<BR>O15 - 
+      Trusted Zone: *.scoobidoo.com<BR>O15 - Trusted Zone: 
+      *.searchbarcash.com<BR>O15 - Trusted Zone: *.searchmiracle.com<BR>O15 - 
+      Trusted Zone: *.slotch.com<BR>O15 - Trusted Zone: 
+      *.static.topconverting.com<BR>O15 - Trusted Zone: *.teensguru.com<BR>O15 - 
+      Trusted Zone: *.05p.com (HKLM)<BR>O15 - Trusted Zone: *.awmdabest.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.blazefind.com (HKLM)<BR>O15 - Trusted 
+      Zone: *.clickspring.net (HKLM)<BR>O15 - Trusted Zone: *.flingstone.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.frame.crazywinnings.com (HKLM)<BR>O15 - 
+      Trusted Zone: *.mt-download.com (HKLM)<BR>O15 - Trusted Zone: 
+      *.my-internet.info (HKLM)<BR>O15 - Trusted Zone: *.scoobidoo.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.searchbarcash.com (HKLM)<BR>O15 - Trusted 
+      Zone: *.searchmiracle.com (HKLM)<BR>O15 - Trusted Zone: *.slotch.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.static.topconverting.com (HKLM)<BR>O15 - 
+      Trusted IP range: 206.161.125.149<BR>O15 - Trusted IP range: 
+      206.161.124.130 (HKLM)<BR>O15 - ProtocolDefaults: 'http' protocol is in 
+      Trusted Zone, should be Internet Zone<BR>O15 - ProtocolDefaults: 'http' 
+      protocol is in Trusted Zone, should be Internet Zone (HKLM)<BR>O16 - DPF: 
+      Yahoo! MahJong Solitaire - <A 
+      href="http://download.games.yahoo.com/games/clients/y/mjst4_x.cab" 
+      target=_blank>http://download.games.yahoo.com/games/clients/y/mjst4_x.cab</A><BR>O16 
+      - DPF: {6414512B-B978-451D-A0D8-FCFDF33E833C} (WUWebControl Class) - <A 
+      href="http://v5.windowsupdate.microsoft.com/v5consumer/V5Controls/en/x86/client/wuweb_site.cab?1108005278351" 
+      target=_blank>http://v5.windowsupdate.microsoft.com/v5consumer/V5Controls/en/x86/client/wuweb_site.cab?1108005278351</A><BR>O16 
+      - DPF: {CC05BC12-2AA2-4AC7-AC81-0E40F83B1ADF} (Live365Player Class) - <A 
+      href="http://www.live365.com/players/play365.cab" 
+      target=_blank>http://www.live365.com/players/play365.cab</A><BR>O16 - DPF: 
+      {D719897A-B07A-4C0C-AEA9-9B663A28DFCB} (iTunesDetector Class) - <A 
+      href="http://ax.phobos.apple.com.edgesuite.net/detection/ITDetector.cab" 
+      target=_blank>http://ax.phobos.apple.com.edgesuite.net/detection/ITDetector.cab</A><BR>O21 
+      - SSODL: systemp - {7BD8BB15-6D44-44AA-BF69-AF79499F34E3} - systemp.dll 
+      (file missing)<BR>O23 - Service: Ati HotKey Poller - Unknown owner - 
+      C:\WINNT\System32\Ati2evxx.exe<BR>O23 - Service: Symantec Event Manager 
+      (ccEvtMgr) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>O23 - Service: Symantec Password Validation 
+      (ccPwdSvc) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccPwdSvc.exe<BR>O23 - Service: Symantec Settings Manager (ccSetMgr) 
+      - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccSetMgr.exe<BR>O23 - Service: Norton AntiVirus Auto-Protect 
+      Service (navapsvc) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\navapsvc.exe<BR>O23 - Service: Norton AntiVirus Firewall Monitor 
+      Service (NPFMntor) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>O23 - Service: SAVScan - Symantec 
+      Corporation - C:\Program Files\Norton AntiVirus\SAVScan.exe<BR>O23 - 
+      Service: ScriptBlocking Service (SBService) - Symantec Corporation - 
+      C:\PROGRA~1\COMMON~1\SYMANT~1\SCRIPT~1\SBServ.exe<BR>O23 - Service: 
+      Symantec Network Drivers Service (SNDSrvc) - Symantec Corporation - 
+      C:\Program Files\Common Files\Symantec Shared\SNDSrvc.exe<BR>O23 - 
+      Service: Symantec SPBBCSvc (SPBBCSvc) - Symantec Corporation - C:\Program 
+      Files\Common Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>O23 - Service: 
+      Symantec Core LC - Symantec Corporation - C:\Program Files\Common 
+      Files\Symantec Shared\CCPD-LC\symlcsvc.exe<BR>O23 - Service: Workstation 
+      NetLogon Service ( %AFå ¤À¨) - Unknown owner - 
+      C:\WINNT\netni32.exe<BR><BR></DIV><!--IBF.ATTACHMENT_47700--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(47700); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_47700></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=47700"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-47700',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=47700&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(47700, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 47776-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry47776></A><SPAN 
+      class=unreg>thatman</SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Feb 24 2005, 07:54 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(47776); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#2</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post1 vAlign=top><SPAN 
+      class=postdetails><BR><BR>Unregistered<BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR><IMG 
+      height=1 alt="" src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post1 id=post-main-47776 vAlign=top width="100%"><!-- THE POST 47776 -->
+      <DIV class=postcolor id=post-47776>Hi alan24brown<BR><BR>You have a nasty 
+      About:Blank infection. This fix requires several tools that need to be 
+      downloaded. Please download these now, we will run them later.<BR><BR>1) 
+      <A href="http://antispyware.nextdesigns.net/showsoftware.php?id=8" 
+      target=_blank>About:Buster</A> - Download it and extract it to 
+      C:/aboutbuster.<BR>2) <A 
+      href="http://antispyware.nextdesigns.net/showsoftware.php?id=1" 
+      target=_blank>CleanUp!</A> - Download it and install it.<BR>3) <A 
+      href="http://cwshredder.net/bin/CWShredder.exe" target=_blank>CWShredder 
+      2.11</A> - Download it and save it to your desktop.<BR>4) <A 
+      href="http://antispyware.nextdesigns.net/showsoftware.php?id=4" 
+      target=_blank>Ad-Aware</A> - Download, install, and update.<BR><BR>Enable 
+      hidden files and folders: Be sure you're able to <A 
+      href="http://www.xtra.co.nz/help/0,,4155-1916458,00.html" 
+      target=_blank>Enable hidden files and folders:</A><BR><BR><SPAN 
+      style="COLOR: red">During the fix do NOT connect to the internet. Unless 
+      you can memorize these instructions, it would be a good idea to print them 
+      out.</SPAN><BR><BR><SPAN style="COLOR: red"><B>Boot into safe 
+      mode:</B></SPAN><BR>Restart your computer and as soon as it starts booting 
+      up again continuously tap F8. A menu should come up where you will be 
+      given the option to enter Safe Mode.<BR><BR>Run AboutBuster<BR>-Click 
+      Start to begin the process<BR>-Click OK on the Buster Report dialogue box 
+      to start the scan<BR>AboutBuster scans the computer for malicious files 
+      and deletes them.<BR>Save the report (copy and paste into Notepad and save 
+      as a .txt file) to post a copy for review.<BR><BR>Run CWShredder<BR>-Next, 
+      click on the: ‘Fix’ button<BR>-Follow the prompts, and press OK<BR><BR>Run 
+      CleanUp<BR>-Make sure it is on Standard Mode<BR>-Click the "CleanUp!" 
+      button<BR><BR>Run Ad-Aware<BR>1. If you have a previous version of 
+      Ad-Aware installed, during the installation of the new version you will be 
+      prompted to uninstall or keep the older version - be sure to uninstall the 
+      previous version.<BR>2. After installing Ad-aware, you will be prompted to 
+      update the program and run a full scan. De-select all boxes so that it 
+      does not run.<BR>3. Manually run "Ad-Aware SE Personal" and from the main 
+      screen Click on "Check for Updates Now".<BR>4. Once the definitions have 
+      been updated:<BR>5. Reconfigure Ad-Aware for Full Scan as per the 
+      following instructions:<BR>* Launch the program, and click on the Gear at 
+      the top of the start screen.<BR>* Under General Settings the following 
+      boxes should all be checked off: (Checked will be indicated by a green 
+      circle with a check mark in it, Un-Checked is a red circle with an X in 
+      it. If it is grayed out, those features are only available in the retail 
+      version.)<BR>o "Automatically save logfile"<BR>o Automatically quarantine 
+      objects prior to removal"<BR>o Safe Mode (always request 
+      confirmation)<BR>o Prompt to update outdated confirmation) - Change to 7 
+      days.<BR>* Click the "Scanning" button (On the left side).<BR>* Under 
+      Drives &amp; Folders, select "Scan within Archives"<BR>* Click "Click here 
+      to select Drives + folders" and select your installed hard drives.<BR>* 
+      Under Memory &amp; Registry, select all options.<BR>* Click the "Advanced" 
+      button (On the left hand side).<BR>* Under "Shell Integration", select 
+      "Move deleted files to Recycle Bin".<BR>* Under "Log-file detail", select 
+      all options.<BR>* Click on the "Defaults" button on the left.<BR>* Type in 
+      the full url of what you want as your default homepage and searchpage e.g. 
+      <A href="http://www.google.com/" 
+      target=_blank>http://www.google.com/</A>.<BR>* Click the "Tweak" button 
+      (Again, on the left hand side).<BR>* Expand "Scanning Engine" by clicking 
+      on the "+" (Plus) symbol and select the following:<BR>o "Unload recognized 
+      processes during scanning."<BR>o "Obtain command line of scanned 
+      processes"<BR>o "Scan registry for all users instead of current user 
+      only"<BR>* Under "Cleaning Engine", select the following:<BR>o 
+      "Automatically try to unregister objects prior to deletion."<BR>o "During 
+      removal, unload explorer and IE if necessary"<BR>o "Let Windows remove 
+      files in use at next reboot."<BR>o "Delete quarantined objects after 
+      restoring"<BR>* Click on "Safety Settings" and select "Write-protect 
+      system files after repair (Hosts file, etc)"<BR>* Click on "Proceed" to 
+      save these Preferences.<BR>* Click on the "Scan Now" button on the 
+      left.<BR>* Under "Select Scan Mode, be sure to select "Use Custom Scanning 
+      Options".<BR>6. Close all programs except ad-aware.<BR>7. Click on "Next" 
+      in the bottom right corner to start the scan.<BR>8. Run the Ad-Aware scan 
+      and allow it to remove everything it finds and then REBOOT - Even if not 
+      prompted to.<BR>9. After you log back in, Ad-Aware may run to finalize the 
+      scan and remove any locked files that it may of found. Allow it to 
+      finish.<BR>Run HJT, close any open windows, and fix the following items 
+      (if they are still there):<BR><BR><B>R1 - HKCU\Software\Microsoft\Internet 
+      Explorer\Main,Search Bar = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,SearchURL = 
+      about:blank<BR>R1 - HKLM\Software\Microsoft\Internet 
+      Explorer\Main,Default_Page_URL = about:blank<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Default_Search_URL = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Bar = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,SearchURL = 
+      about:blank<BR>R1 - HKCU\Software\Microsoft\Internet 
+      Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\system32\pgamp.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Start Page_bak = 
+      about:blank<BR>O2 - BHO: (no name) - 
+      {C1A798BF-49B8-F852-FB29-3EC175C39354} - C:\WINNT\javaas.dll<BR>O4 - 
+      HKLM\..\Run: [2C.tmp] C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\2C.tmp.exe 0 
+      28129<BR>O4 - HKLM\..\Run: [tibs5] C:\WINNT\System32\tibs5.exe<BR>O4 - 
+      HKLM\..\Run: [2C.tmp.exe] C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\2C.tmp.exe 2 
+      28129<BR>O4 - HKCU\..\Run: [Arma] C:\Documents and 
+      Settings\Administrator\Application Data\tsad.exe<BR>O4 - HKCU\..\Run: 
+      [Mzsupbhv] c:\WINNT\system32\w?wexec.exe<BR>O4 - HKCU\..\Run: [Uxfwte] 
+      c:\WINNT\system32\n?tepad.exe<BR>O4 - HKCU\..\Run: [Anoagevy] 
+      C:\WINNT\system32\?hkdsk.exe<BR>O9 - Extra button: (no name) - 
+      {CD67F990-D8E9-11d2-98FE-00C0F0318AFE} - (no file)<BR>O15 - Trusted Zone: 
+      *.05p.com<BR>O15 - Trusted Zone: *.awmdabest.com<BR>O15 - Trusted Zone: 
+      *.blazefind.com<BR>O15 - Trusted Zone: *.clickspring.net<BR>O15 - Trusted 
+      Zone: *.flingstone.com<BR>O15 - Trusted Zone: 
+      *.frame.crazywinnings.com<BR>O15 - Trusted Zone: *.i-lookup.com<BR>O15 - 
+      Trusted Zone: *.mt-download.com<BR>O15 - Trusted Zone: 
+      *.my-internet.info<BR>O15 - Trusted Zone: *.offshoreclicks.com<BR>O15 - 
+      Trusted Zone: *.scoobidoo.com<BR>O15 - Trusted Zone: 
+      *.searchbarcash.com<BR>O15 - Trusted Zone: *.searchmiracle.com<BR>O15 - 
+      Trusted Zone: *.slotch.com<BR>O15 - Trusted Zone: 
+      *.static.topconverting.com<BR>O15 - Trusted Zone: *.teensguru.com<BR>O15 - 
+      Trusted Zone: *.05p.com (HKLM)<BR>O15 - Trusted Zone: *.awmdabest.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.blazefind.com (HKLM)<BR>O15 - Trusted 
+      Zone: *.clickspring.net (HKLM)<BR>O15 - Trusted Zone: *.flingstone.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.frame.crazywinnings.com (HKLM)<BR>O15 - 
+      Trusted Zone: *.mt-download.com (HKLM)<BR>O15 - Trusted Zone: 
+      *.my-internet.info (HKLM)<BR>O15 - Trusted Zone: *.scoobidoo.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.searchbarcash.com (HKLM)<BR>O15 - Trusted 
+      Zone: *.searchmiracle.com (HKLM)<BR>O15 - Trusted Zone: *.slotch.com 
+      (HKLM)<BR>O15 - Trusted Zone: *.static.topconverting.com (HKLM)<BR>O15 - 
+      Trusted IP range: 206.161.125.149<BR>O15 - Trusted IP range: 
+      206.161.124.130 (HKLM)<BR>O15 - ProtocolDefaults: 'http' protocol is in 
+      Trusted Zone, should be Internet Zone<BR>O15 - ProtocolDefaults: 'http' 
+      protocol is in Trusted Zone, should be Internet Zone (HKLM)<BR>O21 - 
+      SSODL: systemp - {7BD8BB15-6D44-44AA-BF69-AF79499F34E3} - systemp.dll 
+      (file missing)<BR>O23 - Service: Workstation NetLogon Service ( %AFå 
+      ¤À¨) - Unknown owner - C:\WINNT\netni32.exe</B><BR><BR><SPAN 
+      style="COLOR: red">Using Windows Explorer, locate the following 
+      files/folders, and delete them if 
+      found:</SPAN><BR><BR><B>C:\WINNT\netni32.exe<BR>C:\WINNT\addqb.exe<BR>C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\2C.tmp.exe<BR>C:\WINNT\System32\tibs5.exe<BR>C:\Documents 
+      and Settings\Administrator\Application 
+      Data\tsad.exe<BR>C:\WINNT\javaas.dll<BR>c:\WINNT\system32\w?wexec.exe<BR>c:\WINNT\system32\n?tepad.exe<BR>C:\WINNT\system32\?hkdsk.exe<BR>systemp.dll 
+      (file missing)</B><BR><BR><BR>Reboot into normal mode (simply restart your 
+      computer as you normally would), <BR><BR>Please run the following free, 
+      online virus scans:<BR><A 
+      href="http://housecall.trendmicro.com/housecall/start_corp.asp" 
+      target=_blank>http://housecall.trendmicro.com/housecall/start_corp.asp</A><BR><A 
+      href="http://www.pandasoftware.com/activescan/com/activescan_principal.htm" 
+      target=_blank>http://www.pandasoftware.com/activescan/com/activescan_principal.htm</A><BR><BR>Then 
+      restart your computer one more time and post a new HJT log as well as the 
+      About:Buster log I asked you to save earlier.<BR><BR>Kc <!--emo&:thumbsup:--><IMG style="VERTICAL-ALIGN: middle" alt=thumbsup.gif 
+      src="Very Imp_files/thumbsup.gif" border=0><!--endemo--></DIV><!--IBF.ATTACHMENT_47776--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(47776); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_47776></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=47776"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-47776',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=47776&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(47776, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 48188-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry48188></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Feb 25 2005, 09:03 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(48188); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#3</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-48188 vAlign=top width="100%"><!-- THE POST 48188 -->
+      <DIV class=postcolor id=post-48188>I tried to enable hidden files and 
+      folders by going to My Computer, but Dr. Watson postmortem... pops up and 
+      my computer freezes.<BR><BR>Do I need to fix this problem first?<BR><BR>If 
+      so, how do I?<BR><BR>- Alan<BR><BR>Thanks for your help so far... it is 
+      deeply 
+appreciated!</DIV><!--IBF.ATTACHMENT_48188--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(48188); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_48188></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=48188"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-48188',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=48188&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(48188, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 48278-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry48278></A><SPAN 
+      class=unreg>thatman</SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Feb 26 2005, 04:25 AM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(48278); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#4</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post1 vAlign=top><SPAN 
+      class=postdetails><BR><BR>Unregistered<BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR><IMG 
+      height=1 alt="" src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post1 id=post-main-48278 vAlign=top width="100%"><!-- THE POST 48278 -->
+      <DIV class=postcolor id=post-48278>Hi alan24brown<BR><BR>Run the fix leave 
+      out show hidden files and folders.<BR>Run the fix four times each single 
+      run reboot back to safe mode.<BR><BR>Pleast post a new HJT.Log 
+      <BR><BR>Kc</DIV><!--IBF.ATTACHMENT_48278--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(48278); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_48278></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=48278"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-48278',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=48278&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(48278, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 48587-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry48587></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Feb 26 2005, 09:35 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(48587); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#5</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-48587 vAlign=top width="100%"><!-- THE POST 48587 -->
+      <DIV class=postcolor id=post-48587>Okay ... here we go.<BR><BR>Here are 
+      the 2 things you asked for.<BR><BR>HiJackThis:<BR><BR>Logfile of 
+      HijackThis v1.99.1<BR>Scan saved at 10:29:48 PM, on 2/26/2005<BR>Platform: 
+      Windows XP SP2 (WinNT 5.01.2600)<BR>MSIE: Internet Explorer v6.00 SP2 
+      (6.00.2900.2180)<BR><BR>Running 
+      processes:<BR>C:\WINNT\System32\smss.exe<BR>C:\WINNT\system32\winlogon.exe<BR>C:\WINNT\system32\services.exe<BR>C:\WINNT\system32\lsass.exe<BR>C:\WINNT\system32\svchost.exe<BR>C:\WINNT\System32\svchost.exe<BR>C:\Program 
+      Files\Common Files\Symantec 
+      Shared\ccSetMgr.exe<BR>C:\WINNT\Explorer.EXE<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SNDSrvc.exe<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>C:\Program Files\Common 
+      Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>C:\WINNT\system32\spoolsv.exe<BR>C:\WINNT\System32\Ati2evxx.exe<BR>C:\Program 
+      Files\Norton AntiVirus\navapsvc.exe<BR>C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>C:\Program Files\Common Files\Symantec 
+      Shared\CCPD-LC\symlcsvc.exe<BR>C:\WINNT\atlsa.exe<BR>C:\Program 
+      Files\Adaptec\Easy CD Creator 5\DirectCD\DirectCD.exe<BR>C:\Program 
+      Files\Common Files\Microsoft Shared\Works 
+      Shared\WkUFind.exe<BR>C:\WINNT\system32\ntln32.exe<BR>C:\WINNT\system32\wuauclt.exe<BR>C:\Documents 
+      and Settings\Administrator\Desktop\HijackThis.exe<BR><BR>R0 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R3 - 
+      Default URLSearchHook is missing<BR>O2 - BHO: NAV Helper - 
+      {BDF3E430-B101-42AD-A544-FADC6B084872} - C:\Program Files\Norton 
+      AntiVirus\NavShExt.dll<BR>O2 - BHO: (no name) - 
+      {E82E171B-91D2-1319-7599-28538A263AB9} - 
+      C:\WINNT\system32\crgm32.dll<BR>O3 - Toolbar: Norton AntiVirus - 
+      {42CDD1BF-3FFB-4238-8AD1-7859DF00B1D6} - C:\Program Files\Norton 
+      AntiVirus\NavShExt.dll<BR>O4 - HKLM\..\Run: [AdaptecDirectCD] "C:\Program 
+      Files\Adaptec\Easy CD Creator 5\DirectCD\DirectCD.exe"<BR>O4 - 
+      HKLM\..\Run: [Microsoft Works Portfolio] C:\Program Files\Microsoft 
+      Works\WksSb.exe /AllUsers<BR>O4 - HKLM\..\Run: [Microsoft Works Update 
+      Detection] C:\Program Files\Common Files\Microsoft Shared\Works 
+      Shared\WkUFind.exe<BR>O4 - HKLM\..\Run: [MoneyStartUp10.0] "C:\Program 
+      Files\Microsoft Money\System\Activation.exe"<BR>O4 - HKLM\..\Run: 
+      [WorksFUD] C:\Program Files\Microsoft Works\wkfud.exe<BR>O4 - HKLM\..\Run: 
+      [Symantec NetDriver Monitor] C:\PROGRA~1\SYMNET~1\SNDMon.exe<BR>O4 - 
+      HKLM\..\Run: [ntln32.exe] C:\WINNT\system32\ntln32.exe<BR>O4 - 
+      HKLM\..\RunOnce: [atlsa.exe] C:\WINNT\atlsa.exe<BR>O9 - Extra button: (no 
+      name) - {08B0E5C0-4FCB-11CF-AAA5-00401C608501} - 
+      C:\WINNT\System32\msjava.dll<BR>O9 - Extra 'Tools' menuitem: Sun Java 
+      Console - {08B0E5C0-4FCB-11CF-AAA5-00401C608501} - 
+      C:\WINNT\System32\msjava.dll<BR>O9 - Extra button: MoneySide - 
+      {E023F504-0C5A-4750-A1E7-A9046DEA8A21} - C:\Program Files\Microsoft 
+      Money\System\mnyviewer.dll<BR>O15 - Trusted Zone: 
+      *.frame.crazywinnings.com<BR>O15 - Trusted Zone: *.frame.crazywinnings.com 
+      (HKLM)<BR>O23 - Service: Ati HotKey Poller - Unknown owner - 
+      C:\WINNT\System32\Ati2evxx.exe<BR>O23 - Service: Symantec Event Manager 
+      (ccEvtMgr) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>O23 - Service: Symantec Password Validation 
+      (ccPwdSvc) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccPwdSvc.exe<BR>O23 - Service: Symantec Settings Manager (ccSetMgr) 
+      - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccSetMgr.exe<BR>O23 - Service: Norton AntiVirus Auto-Protect 
+      Service (navapsvc) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\navapsvc.exe<BR>O23 - Service: Norton AntiVirus Firewall Monitor 
+      Service (NPFMntor) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>O23 - Service: SAVScan - Symantec 
+      Corporation - C:\Program Files\Norton AntiVirus\SAVScan.exe<BR>O23 - 
+      Service: ScriptBlocking Service (SBService) - Symantec Corporation - 
+      C:\PROGRA~1\COMMON~1\SYMANT~1\SCRIPT~1\SBServ.exe<BR>O23 - Service: 
+      Symantec Network Drivers Service (SNDSrvc) - Symantec Corporation - 
+      C:\Program Files\Common Files\Symantec Shared\SNDSrvc.exe<BR>O23 - 
+      Service: Symantec SPBBCSvc (SPBBCSvc) - Symantec Corporation - C:\Program 
+      Files\Common Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>O23 - Service: 
+      Symantec Core LC - Symantec Corporation - C:\Program Files\Common 
+      Files\Symantec Shared\CCPD-LC\symlcsvc.exe<BR>O23 - Service: Remote 
+      Procedure Call (RPC) Helper ( 6QÔõ 'ª´ÆÐ8) - Unknown owner - 
+      C:\WINNT\appcr.exe (file missing)<BR><BR><BR><BR><BR>and here is the 
+      aboutbuster...<BR><BR><BR><BR><BR><BR>Scanned at: 10:04:16 PM on: 
+      2/26/2005<BR><BR><BR>-- Scan 1 ---------------------------<BR>About:Buster 
+      Version 4.0<BR>Reference List : 16<BR><BR>No ADS found on 
+      system<BR>Removed 2 Random Key Entries<BR>Attempted Clean Of Temp 
+      folder.<BR>Removed Uninstall Key (HSA)<BR>Removed Uninstall Key 
+      (SE)<BR>Removed Uninstall Key (SW)<BR>Pages Reset... 
+      Done!<BR><BR><BR><BR><BR><BR><BR>I went down your list and did everything 
+      you asked, except ...<BR><BR>I couldn't get the two final scans to work... 
+      these two...<BR><BR><A 
+      href="http://housecall.trendmicro.com/housecall/start_corp.asp" 
+      target=_blank>http://housecall.trendmicro.com/housecall/start_corp.asp</A><BR><A 
+      href="http://www.pandasoftware.com/activescan/co...n_principal.htm" 
+      target=_blank>http://www.pandasoftware.com/activescan/co...n_principal.htm</A><BR><BR><BR><BR>Thanks 
+      for spending the time to help!<BR>I really appreciate it!<BR><BR>- 
+      alan24brown<BR><BR></DIV><!--IBF.ATTACHMENT_48587--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(48587); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_48587></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=48587"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-48587',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=48587&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(48587, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 48606-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry48606></A><SPAN 
+      class=unreg>thatman</SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Feb 26 2005, 11:46 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(48606); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#6</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post1 vAlign=top><SPAN 
+      class=postdetails><BR><BR>Unregistered<BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR><IMG 
+      height=1 alt="" src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post1 id=post-main-48606 vAlign=top width="100%"><!-- THE POST 48606 -->
+      <DIV class=postcolor id=post-48606>Hi alan24brown<BR><BR>Please set your 
+      system to show all files; <A 
+      href="http://www.xtra.co.nz/help/0,,4155-1916458,00.html#5" 
+      target=_blank>How to view hidden files and folders.</A> <BR><BR>Copy and 
+      paste this text document and save it to your desktop. Or if you have a 
+      printer you can print these instructions.<BR><BR>Please go offline, close 
+      all browsers and any open Windows, making sure that only HijackThis is 
+      open. Scan and when it finishes, put an X in the boxes, only next to these 
+      following items.<BR><BR><B>O2 - BHO: (no name) - 
+      {E82E171B-91D2-1319-7599-28538A263AB9} - 
+      C:\WINNT\system32\crgm32.dll<BR>O4 - HKLM\..\Run: [ntln32.exe] 
+      C:\WINNT\system32\ntln32.exe<BR>O4 - HKLM\..\RunOnce: [atlsa.exe] 
+      C:\WINNT\atlsa.exe<BR>O15 - Trusted Zone: *.frame.crazywinnings.com<BR>O15 
+      - Trusted Zone: *.frame.crazywinnings.com (HKLM)<BR>O23 - Service: Remote 
+      Procedure Call (RPC) Helper ( 6QÔõ 'ª´ÆÐ8) - Unknown owner - 
+      C:\WINNT\appcr.exe (file missing)</B><BR><BR>Click on Fix Checked and exit 
+      HijackThis.<BR><BR>Reboot into Safe Mode: <A 
+      href="http://www.xtra.co.nz/help/0,,6156-1377929,00.html#4" 
+      target=_blank>see here</A> if you don't know how to do this.<BR><BR>Using 
+      Windows Explorer, locate the following files/folders, and delete them 
+      <SPAN style="COLOR: red">if 
+      found.</SPAN><BR><BR><B>C:\WINNT\system32\crgm32.dll<BR>C:\WINNT\system32\ntln32.exe<BR>C:\WINNT\atlsa.exe</B><BR><BR>Exit 
+      Explorer, and reboot as normal afterwards.<BR><BR>Please run the following 
+      free, online virus scans:<BR><A 
+      href="http://housecall.trendmicro.com/housecall/start_corp.asp" 
+      target=_blank>http://housecall.trendmicro.com/housecall/start_corp.asp</A><BR><BR>If 
+      you would please, rescan with HijackThis and post a fresh log in this same 
+      topic, and let us know how your system's working. <BR><BR>kc <!--emo&:thumbsup:--><IMG style="VERTICAL-ALIGN: middle" alt=thumbsup.gif 
+      src="Very Imp_files/thumbsup.gif" border=0><!--endemo--> <BR></DIV><!--IBF.ATTACHMENT_48606--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(48606); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_48606></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=48606"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-48606',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=48606&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(48606, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 49305-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry49305></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Feb 28 2005, 08:01 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(49305); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#7</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-49305 vAlign=top width="100%"><!-- THE POST 49305 -->
+      <DIV class=postcolor id=post-49305>Okay - here we go.<BR><BR>I did 
+      everything you told me to, except run the following scan from<BR><A 
+      href="http://housecall.trendmicro.com/housecall/start_corp.asp" 
+      target=_blank>http://housecall.trendmicro.com/housecall/start_corp.asp</A><BR><BR>I 
+      tried twice and both times a screen popped up and said,<BR><BR>"Internet 
+      Explorer has found a problem with an add-on and needs to 
+      close."<BR><BR>The add-on file name was mfcob.dll (I assume the one that 
+      was trying to install for the scan).<BR><BR>I searched for the files you 
+      told me...<BR><BR>C:\WINNT\atlsa.exe was there and I deleted 
+      it.<BR><BR>The other two were not 
+      there...<BR><BR>C:\WINNT\System32\crgm32.dll &amp; ntln32.exe.<BR><BR>Here 
+      is my new Hijack This ...<BR><BR><BR><BR><BR>Logfile of HijackThis 
+      v1.99.1<BR>Scan saved at 8:51:26 PM, on 2/28/2005<BR>Platform: Windows XP 
+      SP2 (WinNT 5.01.2600)<BR>MSIE: Internet Explorer v6.00 SP2 
+      (6.00.2900.2180)<BR><BR>Running 
+      processes:<BR>C:\WINNT\System32\smss.exe<BR>C:\WINNT\system32\winlogon.exe<BR>C:\WINNT\system32\services.exe<BR>C:\WINNT\system32\lsass.exe<BR>C:\WINNT\system32\svchost.exe<BR>C:\WINNT\System32\svchost.exe<BR>C:\Program 
+      Files\Common Files\Symantec Shared\ccSetMgr.exe<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SNDSrvc.exe<BR>C:\Program Files\Common 
+      Files\Symantec 
+      Shared\SPBBC\SPBBCSvc.exe<BR>C:\WINNT\Explorer.EXE<BR>C:\Program 
+      Files\Common Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>C:\WINNT\system32\spoolsv.exe<BR>C:\WINNT\System32\Ati2evxx.exe<BR>C:\Program 
+      Files\Norton AntiVirus\navapsvc.exe<BR>C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>C:\Program Files\Common Files\Symantec 
+      Shared\CCPD-LC\symlcsvc.exe<BR>C:\WINNT\system32\atltd32.exe<BR>C:\Program 
+      Files\Adaptec\Easy CD Creator 5\DirectCD\DirectCD.exe<BR>C:\Program 
+      Files\Common Files\Microsoft Shared\Works Shared\WkUFind.exe<BR>C:\Program 
+      Files\Common Files\Symantec 
+      Shared\ccApp.exe<BR>C:\WINNT\system32\msls.exe<BR>C:\Program 
+      Files\Microsoft Works\MSWorks.exe<BR>C:\Program Files\Microsoft 
+      Office\Office10\WINWORD.EXE<BR>C:\Program Files\Internet 
+      Explorer\iexplore.exe<BR>C:\Program 
+      Files\Messenger\msmsgs.exe<BR>C:\Documents and 
+      Settings\Administrator\Desktop\HijackThis.exe<BR><BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Search Bar = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Default_Page_URL = 
+      about:blank<BR>R1 - HKLM\Software\Microsoft\Internet 
+      Explorer\Main,Default_Search_URL = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Bar = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R0 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R3 - 
+      Default URLSearchHook is missing<BR>O2 - BHO: NAV Helper - 
+      {BDF3E430-B101-42AD-A544-FADC6B084872} - C:\Program Files\Norton 
+      AntiVirus\NavShExt.dll<BR>O2 - BHO: (no name) - 
+      {CF4A6A15-8451-14B3-7DCC-97DF8A0CDEE3} - C:\WINNT\mfcob.dll<BR>O3 - 
+      Toolbar: Norton AntiVirus - {42CDD1BF-3FFB-4238-8AD1-7859DF00B1D6} - 
+      C:\Program Files\Norton AntiVirus\NavShExt.dll<BR>O4 - HKLM\..\Run: 
+      [AdaptecDirectCD] "C:\Program Files\Adaptec\Easy CD Creator 
+      5\DirectCD\DirectCD.exe"<BR>O4 - HKLM\..\Run: [Microsoft Works Portfolio] 
+      C:\Program Files\Microsoft Works\WksSb.exe /AllUsers<BR>O4 - HKLM\..\Run: 
+      [Microsoft Works Update Detection] C:\Program Files\Common Files\Microsoft 
+      Shared\Works Shared\WkUFind.exe<BR>O4 - HKLM\..\Run: [MoneyStartUp10.0] 
+      "C:\Program Files\Microsoft Money\System\Activation.exe"<BR>O4 - 
+      HKLM\..\Run: [WorksFUD] C:\Program Files\Microsoft Works\wkfud.exe<BR>O4 - 
+      HKLM\..\Run: [Symantec NetDriver Monitor] 
+      C:\PROGRA~1\SYMNET~1\SNDMon.exe<BR>O4 - HKLM\..\Run: [ccApp] "C:\Program 
+      Files\Common Files\Symantec Shared\ccApp.exe"<BR>O4 - HKLM\..\Run: 
+      [msls.exe] C:\WINNT\system32\msls.exe<BR>O4 - HKLM\..\RunOnce: 
+      [atltd32.exe] C:\WINNT\system32\atltd32.exe<BR>O9 - Extra button: (no 
+      name) - {08B0E5C0-4FCB-11CF-AAA5-00401C608501} - 
+      C:\WINNT\System32\msjava.dll<BR>O9 - Extra 'Tools' menuitem: Sun Java 
+      Console - {08B0E5C0-4FCB-11CF-AAA5-00401C608501} - 
+      C:\WINNT\System32\msjava.dll<BR>O9 - Extra button: MoneySide - 
+      {E023F504-0C5A-4750-A1E7-A9046DEA8A21} - C:\Program Files\Microsoft 
+      Money\System\mnyviewer.dll<BR>O15 - Trusted Zone: 
+      *.frame.crazywinnings.com<BR>O15 - Trusted Zone: *.frame.crazywinnings.com 
+      (HKLM)<BR>O16 - DPF: {74D05D43-3236-11D4-BDCD-00C04F9A3B61} (HouseCall 
+      Control) - <A 
+      href="http://a840.g.akamai.net/7/840/537/2004061001/housecall.trendmicro.com/housecall/xscan53.cab" 
+      target=_blank>http://a840.g.akamai.net/7/840/537/2004061001/housecall.trendmicro.com/housecall/xscan53.cab</A><BR>O16 
+      - DPF: {9A9307A0-7DA4-4DAF-B042-5009F29E09E1} (ActiveScan Installer Class) 
+      - <A href="http://www.pandasoftware.com/activescan/as5/asinst.cab" 
+      target=_blank>http://www.pandasoftware.com/activescan/as5/asinst.cab</A><BR>O23 
+      - Service: Ati HotKey Poller - Unknown owner - 
+      C:\WINNT\System32\Ati2evxx.exe<BR>O23 - Service: Symantec Event Manager 
+      (ccEvtMgr) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>O23 - Service: Symantec Password Validation 
+      (ccPwdSvc) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccPwdSvc.exe<BR>O23 - Service: Symantec Settings Manager (ccSetMgr) 
+      - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccSetMgr.exe<BR>O23 - Service: Norton AntiVirus Auto-Protect 
+      Service (navapsvc) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\navapsvc.exe<BR>O23 - Service: Norton AntiVirus Firewall Monitor 
+      Service (NPFMntor) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>O23 - Service: SAVScan - Symantec 
+      Corporation - C:\Program Files\Norton AntiVirus\SAVScan.exe<BR>O23 - 
+      Service: ScriptBlocking Service (SBService) - Symantec Corporation - 
+      C:\PROGRA~1\COMMON~1\SYMANT~1\SCRIPT~1\SBServ.exe<BR>O23 - Service: 
+      Symantec Network Drivers Service (SNDSrvc) - Symantec Corporation - 
+      C:\Program Files\Common Files\Symantec Shared\SNDSrvc.exe<BR>O23 - 
+      Service: Symantec SPBBCSvc (SPBBCSvc) - Symantec Corporation - C:\Program 
+      Files\Common Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>O23 - Service: 
+      Symantec Core LC - Symantec Corporation - C:\Program Files\Common 
+      Files\Symantec Shared\CCPD-LC\symlcsvc.exe<BR>O23 - Service: Remote 
+      Procedure Call (RPC) Helper ( 6QÔõ'ª´ÆÐ8) - Unknown owner - 
+      C:\WINNT\appcr.exe (file missing)<BR><BR><BR>Also, I still can't access 
+      any files, My Computer, My Documents... the bottom toolbar (Start menu, 
+      time, etc. at the bottom) flashes away, the whole screen flashes and 
+      nothing happens. Nothing opens up. Nodda. <!--emo&:(--><IMG 
+      style="VERTICAL-ALIGN: middle" alt=sad.gif src="Very Imp_files/sad.gif" 
+      border=0><!--endemo--><BR><BR>Good news though ... I haven't seen a Dr. 
+      Watson error in a while.<BR><BR>Thanks again for all your help!<BR><BR>- 
+      Alan<BR><BR></DIV><!--IBF.ATTACHMENT_49305--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(49305); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_49305></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=49305"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-49305',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=49305&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(49305, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 49441-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry49441></A><SPAN 
+      class=unreg>thatman</SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 1 2005, 04:18 AM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(49441); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#8</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post1 vAlign=top><SPAN 
+      class=postdetails><BR><BR>Unregistered<BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR><IMG 
+      height=1 alt="" src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post1 id=post-main-49441 vAlign=top width="100%"><!-- THE POST 49441 -->
+      <DIV class=postcolor id=post-49441>Hi alan24brown<BR><BR>Welcome to 
+      geekstogo<BR><BR>You have a nasty About:Blank infection. This fix requires 
+      several tools that need to be downloaded. Please download these now, we 
+      will run them later.<BR><BR><BR>Enable hidden files and folders: Be sure 
+      you're able to <A 
+      href="http://www.xtra.co.nz/help/0,,4155-1916458,00.html" 
+      target=_blank>Enable hidden files and folders:</A><BR><BR><SPAN 
+      style="COLOR: red">During the fix do NOT connect to the internet. Unless 
+      you can memorize these instructions, it would be a good idea to print them 
+      out.</SPAN><BR><BR><SPAN style="COLOR: red"><B>Boot into safe 
+      mode:</B></SPAN><BR>Restart your computer and as soon as it starts booting 
+      up again continuously tap F8. A menu should come up where you will be 
+      given the option to enter Safe Mode.<BR><BR>Run AboutBuster<BR>-Click 
+      Start to begin the process<BR>-Click OK on the Buster Report dialogue box 
+      to start the scan<BR>AboutBuster scans the computer for malicious files 
+      and deletes them.<BR>Save the report (copy and paste into Notepad and save 
+      as a .txt file) to post a copy for review.<BR><BR>Run CWShredder<BR>-Next, 
+      click on the: ‘Fix’ button<BR>-Follow the prompts, and press OK<BR><BR>Run 
+      CleanUp<BR>-Make sure it is on Standard Mode<BR>-Click the "CleanUp!" 
+      button<BR><BR>Run Ad-Aware<BR>1. If you have a previous version of 
+      Ad-Aware installed, during the installation of the new version you will be 
+      prompted to uninstall or keep the older version - be sure to uninstall the 
+      previous version.<BR>2. After installing Ad-aware, you will be prompted to 
+      update the program and run a full scan. De-select all boxes so that it 
+      does not run.<BR>3. Manually run "Ad-Aware SE Personal" and from the main 
+      screen Click on "Check for Updates Now".<BR>4. Once the definitions have 
+      been updated:<BR>5. Reconfigure Ad-Aware for Full Scan as per the 
+      following instructions:<BR>* Launch the program, and click on the Gear at 
+      the top of the start screen.<BR>* Under General Settings the following 
+      boxes should all be checked off: (Checked will be indicated by a green 
+      circle with a check mark in it, Un-Checked is a red circle with an X in 
+      it. If it is grayed out, those features are only available in the retail 
+      version.)<BR>o "Automatically save logfile"<BR>o Automatically quarantine 
+      objects prior to removal"<BR>o Safe Mode (always request 
+      confirmation)<BR>o Prompt to update outdated confirmation) - Change to 7 
+      days.<BR>* Click the "Scanning" button (On the left side).<BR>* Under 
+      Drives &amp; Folders, select "Scan within Archives"<BR>* Click "Click here 
+      to select Drives + folders" and select your installed hard drives.<BR>* 
+      Under Memory &amp; Registry, select all options.<BR>* Click the "Advanced" 
+      button (On the left-hand side).<BR>* Under "Shell Integration", select 
+      "Move deleted files to Recycle Bin".<BR>* Under "Log-file detail", select 
+      all options.<BR>* Click on the "Defaults" button on the left.<BR>* Type in 
+      the full url of what you want as your default homepage and searchpage e.g. 
+      <A href="http://www.google.com/" 
+      target=_blank>http://www.google.com/</A>.<BR>* Click the "Tweak" button 
+      (Again, on the left-hand side).<BR>* Expand "Scanning Engine" by clicking 
+      on the "+" (Plus) symbol and select the following:<BR>o "Unload recognized 
+      processes during scanning."<BR>o "Obtain command line of scanned 
+      processes"<BR>o "Scan registry for all users instead of current user 
+      only"<BR>* Under "Cleaning Engine", select the following:<BR>o 
+      "Automatically try to unregister objects prior to deletion."<BR>o "During 
+      removal, unload explorer and IE if necessary"<BR>o "Let Windows remove 
+      files in use at next reboot."<BR>o "Delete quarantined objects after 
+      restoring"<BR>* Click on "Safety Settings" and select "Write-protect 
+      system files after repair (Hosts file, etc)"<BR>* Click on "Proceed" to 
+      save these Preferences.<BR>* Click on the "Scan Now" button on the 
+      left.<BR>* Under "Select Scan Mode, be sure to select "Use Custom Scanning 
+      Options".<BR>6. Close all programs except ad-aware.<BR>7. Click on "Next" 
+      in the bottom right corner to start the scan.<BR>8. Run the Ad-Aware scan 
+      and allow it to remove everything it finds and then REBOOT - Even if not 
+      prompted to.<BR>9. After you log back in, Ad-Aware may run to finalize the 
+      scan and remove any locked files that it may have found. Allow it to 
+      finish.<BR><BR>Run HJT, close any open windows, and fix the following 
+      items (if they are still there):<BR><BR><B>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Search Bar = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Default_Page_URL = 
+      about:blank<BR>R1 - HKLM\Software\Microsoft\Internet 
+      Explorer\Main,Default_Search_URL = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Bar = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Search Page = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R1 - 
+      HKCU\Software\Microsoft\Internet Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Search,SearchAssistant = 
+      res://C:\WINNT\webyt.dll/sp.html#28129<BR>O2 - BHO: (no name) - 
+      {CF4A6A15-8451-14B3-7DCC-97DF8A0CDEE3} - C:\WINNT\mfcob.dll<BR>O4 - 
+      HKLM\..\Run: [msls.exe] C:\WINNT\system32\msls.exe<BR>O4 - 
+      HKLM\..\RunOnce: [atltd32.exe] C:\WINNT\system32\atltd32.exe<BR>O15 - 
+      Trusted Zone: *.frame.crazywinnings.com<BR>O15 - Trusted Zone: 
+      *.frame.crazywinnings.com (HKLM)<BR>O23 - Service: Remote Procedure Call 
+      (RPC) Helper ( 6QÔõ_'ª´ÆÐ8) - Unknown owner - C:\WINNT\appcr.exe (file 
+      missing)</B><BR><BR><BR><SPAN style="COLOR: red">Using Windows Explorer, 
+      locate the following files/folders, and delete them if 
+      found:</SPAN><BR><BR><B>C:\WINNT\system32\atltd32.exe<BR>C:\WINNT\system32\msls.exe<BR>C:\WINNT\webyt.dll/sp.html#28129<BR>C:\WINNT\mfcob.dll</B><BR><BR><BR>Reboot 
+      into normal mode (simply restart your computer as you normally would), 
+      <BR><BR><SPAN style="COLOR: red">Please run the following free, online 
+      virus scans: Please post the logs From both virus scans we will need them 
+      to remove previous infections that have left files on your 
+      system.</SPAN><BR><A 
+      href="http://housecall.trendmicro.com/housecall/start_corp.asp" 
+      target=_blank>http://housecall.trendmicro.com/housecall/start_corp.asp</A><BR><A 
+      href="http://www.pandasoftware.com/activescan/com/activescan_principal.htm" 
+      target=_blank>http://www.pandasoftware.com/activescan/com/activescan_principal.htm</A><BR><BR>Then 
+      restart your computer one more time and post a new HJT log as well as the 
+      About:Buster log I asked you to save earlier.<BR><BR>Kc <!--emo&:thumbsup:--><IMG style="VERTICAL-ALIGN: middle" alt=thumbsup.gif 
+      src="Very Imp_files/thumbsup.gif" border=0><!--endemo--></DIV><!--IBF.ATTACHMENT_49441--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(49441); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_49441></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=49441"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-49441',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=49441&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(49441, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 49622-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry49622></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 1 2005, 01:48 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(49622); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#9</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-49622 vAlign=top width="100%"><!-- THE POST 49622 -->
+      <DIV class=postcolor id=post-49622>Hold on ...<BR><BR>I think you may have 
+      me confused with someone else.<BR><BR>You said "welcome" - I've been here. 
+<!--emo&:)--><IMG style="VERTICAL-ALIGN: middle" alt=smile.gif 
+      src="Very Imp_files/smile.gif" border=0><!--endemo--><BR><BR>You sent me 
+      the exact same response you did the first time.<BR><BR>You said run those 
+      two free scans, I've already said I did the second one and told you about 
+      the problem with the first.<BR><BR>Did you confuse me with someone 
+      else?<BR>- Alan</DIV><!--IBF.ATTACHMENT_49622--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(49622); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_49622></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=49622"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-49622',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=49622&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(49622, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 49639-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry49639></A><SPAN 
+      class=unreg>thatman</SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 1 2005, 02:30 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(49639); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#10</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post1 vAlign=top><SPAN 
+      class=postdetails><BR><BR>Unregistered<BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR><IMG 
+      height=1 alt="" src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post1 id=post-main-49639 vAlign=top width="100%"><!-- THE POST 49639 -->
+      <DIV class=postcolor id=post-49639>Hi alan24brown<BR><BR>No I have not got 
+      you confused with someone else.<BR>We still Have some coolwebsearch items 
+      in your log and need to finnish them of with this last run trust me you 
+      will see<BR><BR>Kc <!--emo&:thumbsup:--><IMG 
+      style="VERTICAL-ALIGN: middle" alt=thumbsup.gif 
+      src="Very Imp_files/thumbsup.gif" border=0><!--endemo--> <BR><BR></DIV><!--IBF.ATTACHMENT_49639--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(49639); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_49639></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=49639"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-49639',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=49639&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(49639, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 49760-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry49760></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 1 2005, 09:27 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(49760); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#11</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-49760 vAlign=top width="100%"><!-- THE POST 49760 -->
+      <DIV class=postcolor id=post-49760>Alright, man.<BR><BR>I trust 
+      you.<BR><BR>I'll get to work on what you asked.<BR><BR>- Alan</DIV><!--IBF.ATTACHMENT_49760--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(49760); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_49760></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=49760"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-49760',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=49760&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(49760, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 52345-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry52345></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 8 2005, 11:51 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(52345); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#12</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post1 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post1 id=post-main-52345 vAlign=top width="100%"><!-- THE POST 52345 -->
+      <DIV class=postcolor id=post-52345>Alright. I think I got it.<BR>I did 
+      everything you asked me to do.<BR><BR><BR>Here's my 
+      aboutbuster...<BR><BR><BR>Scanned at: 4:44:58 PM on: 
+      3/8/2005<BR><BR><BR>-- Scan 1 ---------------------------<BR>About:Buster 
+      Version 4.0<BR>Reference List : 16<BR><BR>No ADS found on 
+      system<BR>Removed 2 Random Key Entries<BR>Attempted Clean Of Temp 
+      folder.<BR>Removed Uninstall Key (HSA)<BR>Removed Uninstall Key 
+      (SE)<BR>Removed Uninstall Key (SW)<BR>Pages Reset... 
+      Done!<BR><BR><BR><BR>and here's my Hijackthis...<BR><BR>Logfile of 
+      HijackThis v1.99.1<BR>Scan saved at 12:47:21 AM, on 3/9/2005<BR>Platform: 
+      Windows XP SP2 (WinNT 5.01.2600)<BR>MSIE: Internet Explorer v6.00 SP2 
+      (6.00.2900.2180)<BR><BR>Running 
+      processes:<BR>C:\WINNT\System32\smss.exe<BR>C:\WINNT\system32\winlogon.exe<BR>C:\WINNT\system32\services.exe<BR>C:\WINNT\system32\lsass.exe<BR>C:\WINNT\system32\svchost.exe<BR>C:\WINNT\System32\svchost.exe<BR>C:\WINNT\Explorer.EXE<BR>C:\Program 
+      Files\Common Files\Symantec Shared\ccSetMgr.exe<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SNDSrvc.exe<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>C:\Program Files\Common 
+      Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>C:\WINNT\system32\spoolsv.exe<BR>C:\WINNT\System32\Ati2evxx.exe<BR>C:\Program 
+      Files\Norton AntiVirus\navapsvc.exe<BR>C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>C:\Program Files\Common Files\Symantec 
+      Shared\CCPD-LC\symlcsvc.exe<BR>C:\Program Files\Adaptec\Easy CD Creator 
+      5\DirectCD\DirectCD.exe<BR>C:\Program Files\Common Files\Microsoft 
+      Shared\Works Shared\WkUFind.exe<BR>C:\Program Files\Common Files\Symantec 
+      Shared\ccApp.exe<BR>C:\Program Files\Microsoft 
+      AntiSpyware\gcasDtServ.exe<BR>C:\Program Files\Microsoft 
+      AntiSpyware\gcasServ.exe<BR>C:\Program Files\Internet 
+      Explorer\iexplore.exe<BR>C:\Program 
+      Files\Messenger\msmsgs.exe<BR>C:\Documents and 
+      Settings\Administrator\Desktop\HijackThis.exe<BR><BR>R0 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>O2 - BHO: 
+      NAV Helper - {BDF3E430-B101-42AD-A544-FADC6B084872} - C:\Program 
+      Files\Norton AntiVirus\NavShExt.dll<BR>O3 - Toolbar: Norton AntiVirus - 
+      {42CDD1BF-3FFB-4238-8AD1-7859DF00B1D6} - C:\Program Files\Norton 
+      AntiVirus\NavShExt.dll<BR>O4 - HKLM\..\Run: [AdaptecDirectCD] "C:\Program 
+      Files\Adaptec\Easy CD Creator 5\DirectCD\DirectCD.exe"<BR>O4 - 
+      HKLM\..\Run: [Microsoft Works Portfolio] C:\Program Files\Microsoft 
+      Works\WksSb.exe /AllUsers<BR>O4 - HKLM\..\Run: [Microsoft Works Update 
+      Detection] C:\Program Files\Common Files\Microsoft Shared\Works 
+      Shared\WkUFind.exe<BR>O4 - HKLM\..\Run: [MoneyStartUp10.0] "C:\Program 
+      Files\Microsoft Money\System\Activation.exe"<BR>O4 - HKLM\..\Run: 
+      [WorksFUD] C:\Program Files\Microsoft Works\wkfud.exe<BR>O4 - HKLM\..\Run: 
+      [Symantec NetDriver Monitor] C:\PROGRA~1\SYMNET~1\SNDMon.exe<BR>O4 - 
+      HKLM\..\Run: [ccApp] "C:\Program Files\Common Files\Symantec 
+      Shared\ccApp.exe"<BR>O9 - Extra button: MoneySide - 
+      {E023F504-0C5A-4750-A1E7-A9046DEA8A21} - C:\Program Files\Microsoft 
+      Money\System\mnyviewer.dll<BR>O15 - Trusted Zone: 
+      *.frame.crazywinnings.com<BR>O15 - Trusted Zone: *.frame.crazywinnings.com 
+      (HKLM)<BR>O23 - Service: Ati HotKey Poller - Unknown owner - 
+      C:\WINNT\System32\Ati2evxx.exe<BR>O23 - Service: Symantec Event Manager 
+      (ccEvtMgr) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>O23 - Service: Symantec Password Validation 
+      (ccPwdSvc) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccPwdSvc.exe<BR>O23 - Service: Symantec Settings Manager (ccSetMgr) 
+      - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccSetMgr.exe<BR>O23 - Service: Norton AntiVirus Auto-Protect 
+      Service (navapsvc) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\navapsvc.exe<BR>O23 - Service: Norton AntiVirus Firewall Monitor 
+      Service (NPFMntor) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>O23 - Service: SAVScan - Symantec 
+      Corporation - C:\Program Files\Norton AntiVirus\SAVScan.exe<BR>O23 - 
+      Service: ScriptBlocking Service (SBService) - Symantec Corporation - 
+      C:\PROGRA~1\COMMON~1\SYMANT~1\SCRIPT~1\SBServ.exe<BR>O23 - Service: 
+      Symantec Network Drivers Service (SNDSrvc) - Symantec Corporation - 
+      C:\Program Files\Common Files\Symantec Shared\SNDSrvc.exe<BR>O23 - 
+      Service: Symantec SPBBCSvc (SPBBCSvc) - Symantec Corporation - C:\Program 
+      Files\Common Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>O23 - Service: 
+      Symantec Core LC - Symantec Corporation - C:\Program Files\Common 
+      Files\Symantec Shared\CCPD-LC\symlcsvc.exe<BR><BR><BR><BR><BR>Now what do 
+      you think?<BR>- 
+  Alan</DIV><!--IBF.ATTACHMENT_52345--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(52345); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_52345></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=52345"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-52345',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=52345&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(52345, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 52374-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry52374></A><SPAN 
+      class=unreg>thatman</SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 9 2005, 02:30 AM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(52374); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#13</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN 
+      class=postdetails><BR><BR>Unregistered<BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR><IMG 
+      height=1 alt="" src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-52374 vAlign=top width="100%"><!-- THE POST 52374 -->
+      <DIV class=postcolor id=post-52374>Hi alan24brown<BR><BR>Just two items to 
+      clear<BR><BR>Download and unzip cwsserviceremove to your desktop. use 
+      either link below:<BR><A 
+      href="http://computercops.biz/modules.php?name=Forums&amp;file=download&amp;id=3002" 
+      target=_blank>cwsserviceremove</A><BR><BR><A 
+      href="http://www.mytechsupport.ca/helpwithpcs/uploaded/benditup/2004102311711_cwsserviceremove.zip" 
+      target=_blank>cwsserviceremove.zip</A><BR><BR>Unrip the file then run 
+      cwsserviceremove, reboot your system.<BR><BR>Please post a new 
+      HJT.log<BR><BR>Kc <!--emo&:thumbsup:--><IMG style="VERTICAL-ALIGN: middle" 
+      alt=thumbsup.gif src="Very Imp_files/thumbsup.gif" border=0><!--endemo--> 
+      <BR></DIV><!--IBF.ATTACHMENT_52374--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(52374); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_52374></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=52374"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-52374',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=52374&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(52374, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 52533-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry52533></A><SPAN 
+      class=normalname><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=17485">alan24brown</A></SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 9 2005, 03:37 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(52533); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#14</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post1 vAlign=top><SPAN class=postdetails><BR><BR>Member<BR><IMG 
+      alt=* src="Very Imp_files/pip.gif" border=0><IMG alt=* 
+      src="Very Imp_files/pip.gif" border=0><BR><BR>Group: Member<BR>Posts: 
+      11<BR>Joined: 24-February 05<BR>Member No.: 17,485<BR>Operating 
+      System:<BR>XP<BR></SPAN><BR><IMG height=1 alt="" 
+      src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post1 id=post-main-52533 vAlign=top width="100%"><!-- THE POST 52533 -->
+      <DIV class=postcolor id=post-52533>I did what you told me.<BR><BR>Here is 
+      my new HijackThis log...<BR><BR><BR><BR>Logfile of HijackThis 
+      v1.99.1<BR>Scan saved at 4:34:52 PM, on 3/9/2005<BR>Platform: Windows XP 
+      SP2 (WinNT 5.01.2600)<BR>MSIE: Internet Explorer v6.00 SP2 
+      (6.00.2900.2180)<BR><BR>Running 
+      processes:<BR>C:\WINNT\System32\smss.exe<BR>C:\WINNT\system32\winlogon.exe<BR>C:\WINNT\system32\services.exe<BR>C:\WINNT\system32\lsass.exe<BR>C:\WINNT\system32\svchost.exe<BR>C:\WINNT\System32\svchost.exe<BR>C:\Program 
+      Files\Common Files\Symantec Shared\ccSetMgr.exe<BR>C:\Program Files\Common 
+      Files\Symantec Shared\SNDSrvc.exe<BR>C:\WINNT\Explorer.EXE<BR>C:\Program 
+      Files\Common Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>C:\Program 
+      Files\Common Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>C:\WINNT\system32\spoolsv.exe<BR>C:\WINNT\System32\Ati2evxx.exe<BR>C:\Program 
+      Files\Norton AntiVirus\navapsvc.exe<BR>C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>C:\Program Files\Common Files\Symantec 
+      Shared\CCPD-LC\symlcsvc.exe<BR>C:\Program Files\Adaptec\Easy CD Creator 
+      5\DirectCD\DirectCD.exe<BR>C:\Program Files\Common Files\Microsoft 
+      Shared\Works Shared\WkUFind.exe<BR>C:\Program Files\Common Files\Symantec 
+      Shared\ccApp.exe<BR>C:\WINNT\system32\wuauclt.exe<BR>C:\Program 
+      Files\Internet Explorer\iexplore.exe<BR>C:\Program 
+      Files\Messenger\msmsgs.exe<BR>C:\Documents and 
+      Settings\Administrator\Desktop\HijackThis.exe<BR><BR>R0 - 
+      HKCU\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>R0 - 
+      HKLM\Software\Microsoft\Internet Explorer\Main,Local Page = <BR>O2 - BHO: 
+      NAV Helper - {BDF3E430-B101-42AD-A544-FADC6B084872} - C:\Program 
+      Files\Norton AntiVirus\NavShExt.dll<BR>O3 - Toolbar: Norton AntiVirus - 
+      {42CDD1BF-3FFB-4238-8AD1-7859DF00B1D6} - C:\Program Files\Norton 
+      AntiVirus\NavShExt.dll<BR>O4 - HKLM\..\Run: [AdaptecDirectCD] "C:\Program 
+      Files\Adaptec\Easy CD Creator 5\DirectCD\DirectCD.exe"<BR>O4 - 
+      HKLM\..\Run: [Microsoft Works Portfolio] C:\Program Files\Microsoft 
+      Works\WksSb.exe /AllUsers<BR>O4 - HKLM\..\Run: [Microsoft Works Update 
+      Detection] C:\Program Files\Common Files\Microsoft Shared\Works 
+      Shared\WkUFind.exe<BR>O4 - HKLM\..\Run: [MoneyStartUp10.0] "C:\Program 
+      Files\Microsoft Money\System\Activation.exe"<BR>O4 - HKLM\..\Run: 
+      [WorksFUD] C:\Program Files\Microsoft Works\wkfud.exe<BR>O4 - HKLM\..\Run: 
+      [Symantec NetDriver Monitor] C:\PROGRA~1\SYMNET~1\SNDMon.exe<BR>O4 - 
+      HKLM\..\Run: [ccApp] "C:\Program Files\Common Files\Symantec 
+      Shared\ccApp.exe"<BR>O9 - Extra button: MoneySide - 
+      {E023F504-0C5A-4750-A1E7-A9046DEA8A21} - C:\Program Files\Microsoft 
+      Money\System\mnyviewer.dll<BR>O15 - Trusted Zone: 
+      *.frame.crazywinnings.com<BR>O15 - Trusted Zone: *.frame.crazywinnings.com 
+      (HKLM)<BR>O23 - Service: Ati HotKey Poller - Unknown owner - 
+      C:\WINNT\System32\Ati2evxx.exe<BR>O23 - Service: Symantec Event Manager 
+      (ccEvtMgr) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccEvtMgr.exe<BR>O23 - Service: Symantec Password Validation 
+      (ccPwdSvc) - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccPwdSvc.exe<BR>O23 - Service: Symantec Settings Manager (ccSetMgr) 
+      - Symantec Corporation - C:\Program Files\Common Files\Symantec 
+      Shared\ccSetMgr.exe<BR>O23 - Service: Norton AntiVirus Auto-Protect 
+      Service (navapsvc) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\navapsvc.exe<BR>O23 - Service: Norton AntiVirus Firewall Monitor 
+      Service (NPFMntor) - Symantec Corporation - C:\Program Files\Norton 
+      AntiVirus\IWP\NPFMntor.exe<BR>O23 - Service: SAVScan - Symantec 
+      Corporation - C:\Program Files\Norton AntiVirus\SAVScan.exe<BR>O23 - 
+      Service: ScriptBlocking Service (SBService) - Symantec Corporation - 
+      C:\PROGRA~1\COMMON~1\SYMANT~1\SCRIPT~1\SBServ.exe<BR>O23 - Service: 
+      Symantec Network Drivers Service (SNDSrvc) - Symantec Corporation - 
+      C:\Program Files\Common Files\Symantec Shared\SNDSrvc.exe<BR>O23 - 
+      Service: Symantec SPBBCSvc (SPBBCSvc) - Symantec Corporation - C:\Program 
+      Files\Common Files\Symantec Shared\SPBBC\SPBBCSvc.exe<BR>O23 - Service: 
+      Symantec Core LC - Symantec Corporation - C:\Program Files\Common 
+      Files\Symantec Shared\CCPD-LC\symlcsvc.exe<BR><BR><BR><BR>That's 
+      everything you told me to do.<BR><BR>Now what do you think?<BR>- 
+Alan</DIV><!--IBF.ATTACHMENT_52533--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><IMG alt="User is offline" 
+      src="Very Imp_files/p_offline.gif" border=0><A title="Show Contact Card" 
+      href="javascript:PopUp('http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Profile&amp;CODE=showcard&amp;MID=17485','AddressCard','600','300','0','1','1','1')"><IMG 
+      alt="Profile Card" src="Very Imp_files/p_card.gif" border=0></A><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Msg&amp;CODE=04&amp;MID=17485"><IMG 
+      alt=PM src="Very Imp_files/p_pm.gif" border=0></A><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(52533); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_52533></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=52533"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-52533',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=52533&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(52533, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!--Begin Msg Number 52536-->
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TD class=row2 vAlign=center width="1%"><A name=entry52536></A><SPAN 
+      class=unreg>thatman</SPAN></TD>
+    <TD class=row2 vAlign=top width="99%"><!-- POSTED DATE DIV -->
+      <DIV style="FLOAT: left"><SPAN class=postdetails><IMG 
+      style="PADDING-BOTTOM: 2px" alt=post src="Very Imp_files/to_post_off.gif" 
+      border=0> Mar 9 2005, 03:50 PM</SPAN> </DIV><!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+      <DIV align=right><SPAN class=postdetails>Post <A 
+      title="Show the link to this post" 
+      onclick="link_to_post(52536); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#">#15</A> 
+      </SPAN></DIV></TD></TR>
+  <TR>
+    <TD class=post2 vAlign=top><SPAN 
+      class=postdetails><BR><BR>Unregistered<BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR><IMG 
+      height=1 alt="" src="Very Imp_files/spacer.gif" width=160><BR></TD>
+    <TD class=post2 id=post-main-52536 vAlign=top width="100%"><!-- THE POST 52536 -->
+      <DIV class=postcolor id=post-52536>Hi alan24brown<BR><BR>This will finnish 
+      the malware you are doing great <!--emo&:cool:--><IMG 
+      style="VERTICAL-ALIGN: middle" alt=cool.gif src="Very Imp_files/cool.gif" 
+      border=0><!--endemo--> <BR><BR>Download and unzip cwsserviceremove to your 
+      desktop. use either link below:<BR><A 
+      href="http://computercops.biz/modules.php?name=Forums&amp;file=download&amp;id=3002" 
+      target=_blank>cwsserviceremove</A><BR><BR>Double click on the 
+      cwsserviceremove and when asked to merge say yes.<BR><BR><BR><A 
+      href="http://www.ccleaner.com/" target=_blank>Download the 
+      ccleaner</A><BR>I use this Program and is setup like this all boxs are 
+      check.<BR><BR>Clean out all temp files in Mozilla, Internet 
+      Explorer.<BR>Internet Explorer: Tools/ Internet Options/ General/ 
+      Temporary internet files/ Delete Files (NOTE, that this may take very 
+      long!). You can also set the memory limit to about 80 MB at the 
+      Settings.<BR><BR>Mozilla: Edit/ Options/ Extended/ Cache/ Clear 
+      Cache<BR><BR>ActiveX Controls could do with a big cleanup. Open your 
+      browser and go to Tools &gt; Internet Options and click on the General 
+      Tab. Click on Settings (next to Temporary Internet Files) and then click 
+      on View Objects. Rightclick on each and choose Properties. If there is 
+      anything there that you dont know what it is (microsoft, apple, macromedia 
+      etc are OK) or where it came from, delete it. If there are any damaged 
+      controls there, delete those also. If any are needed, you will be prompted 
+      to download them again anyway.<BR><BR>Turn of system restore<BR><A 
+      href="http://service1.symantec.com/SUPPORT/tsgeninfo.nsf/docid/2001111912274039?OpenDocument&amp;src=sec_doc_nam" 
+      target=_blank>Disabling or enabling Windows XP System 
+      Restore</A><BR><BR><SPAN style="COLOR: red">Defrag your hard drive <B>turn 
+      system restore back on</B> and create a new restore 
+      point.</SPAN><BR><BR><B>Now run the ccleaner</B><BR><BR><SPAN 
+      style="COLOR: red">Please run the following free, online virus scans: 
+      Please post the logs From both virus scans and HJT.log we will need them 
+      to remove previous infections that have left files on your 
+      system.</SPAN><BR><A 
+      href="http://housecall.trendmicro.com/housecall/start_corp.asp" 
+      target=_blank>http://housecall.trendmicro.com/housecall/start_corp.asp</A><BR><A 
+      href="http://www.pandasoftware.com/activescan/com/activescan_principal.htm" 
+      target=_blank>http://www.pandasoftware.com/activescan/com/activescan_principal.htm</A><BR><BR>Then 
+      restart your computer one more time <BR><BR>Kc <!--emo&:thumbsup:--><IMG 
+      style="VERTICAL-ALIGN: middle" alt=thumbsup.gif 
+      src="Very Imp_files/thumbsup.gif" border=0><!--endemo--><BR><BR><SPAN 
+      class=edit>This post has been edited by <B>thatman</B>: Mar 9 2005, 03:52 
+      PM</SPAN></DIV><!--IBF.ATTACHMENT_52536--><!-- THE POST --></TD></TR>
+  <TR>
+    <TD class=formbuttonrow noWrap>
+      <DIV style="TEXT-ALIGN: left"><!----></DIV></TD>
+    <TD class=formbuttonrow noWrap><!-- PM / EMAIL / WWW / MSGR -->
+      <DIV style="FLOAT: left"><A href="javascript:scroll(0,0);"><IMG 
+      alt="Go to the top of the page" src="Very Imp_files/p_up.gif" 
+      border=0></A> </DIV><!-- REPORT / UP -->
+      <DIV align=right><A title="Toggle multiquote addition" 
+      onclick="multiquote_add(52536); return false;" 
+      href="http://www.geekstogo.com/forum/Dr_Watson_postmortem_debugger_problem-t10334.html#"><IMG 
+      alt=+ src="Very Imp_files/p_mq_add.gif" name=mad_52536></A><A 
+      title="Reply directly to this post" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=02&amp;f=37&amp;t=10334&amp;qpid=52536"><IMG 
+      alt="Quote Post" src="Very Imp_files/p_quote.gif" border=0></A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD class=catend colSpan=2><!-- no content --></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-52536',
+	new Array(  img_item + " <a title='Full edit screen with all options' href='http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=post&amp;do=edit_post&amp;f=37&amp;t=10334&amp;p=52536&amp;st='>Full Edit</a>",
+				img_item + " <a href='#' title='Edit this post in place with basic options' onclick='return ajax_prep_for_edit(52536, event);'>Quick Edit</a>" ) );
+}
+//]]>
+</SCRIPT>
+<!-- END TABLE --><!-- TABLE FOOTER -->
+<DIV class=barc>
+<DIV 
+style="PADDING-RIGHT: 5px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 5px"><A 
+style="TEXT-DECORATION: none" 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;view=old">« 
+Next Oldest</A> · <A style="FONT-WEIGHT: bold; TEXT-DECORATION: none" 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showforum=37">Malware 
+Removal - HiJackThis Logs Go Here</A> · <A style="TEXT-DECORATION: none" 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;view=new">Next 
+Newest »</A></DIV>
+<DIV>
+<FORM name=search 
+action=http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp; 
+method=post><INPUT type=hidden value=37 name=forums> <INPUT type=hidden 
+value=10334 name=topic> <INPUT type=hidden value=Search name=act> <INPUT 
+type=hidden value=searchtopic name=CODE> <INPUT class=searchinput 
+onfocus="this.value = '';" size=25 value="Enter Keywords" name=keywords>&nbsp; <INPUT class=button type=submit value="Search Topic"> 
+</FORM></DIV></DIV></DIV><BR>
+<TABLE class=ipbtable cellSpacing=0>
+  <TBODY>
+  <TR>
+    <TD style="PADDING-LEFT: 0px" vAlign=center noWrap width="30%">
+      <DIV><SPAN class=pagelink id=page-jump>2 Pages <IMG title="Open Menu" 
+      alt=V src="Very Imp_files/menu_action_down.gif" 
+      border=0></SPAN>&nbsp;&nbsp;<SPAN class=pagecurrent>1</SPAN>&nbsp;<SPAN 
+      class=pagelink><A title=2 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;st=15">2</A></SPAN>&nbsp;<SPAN 
+      class=pagelink><A title="Next page" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;st=15">&gt;</A></SPAN>
+      <SCRIPT type=text/javascript>
+//<![CDATA[
+ipb_pages_shown++;
+var pgjmp = document.getElementById( 'page-jump' );
+pgjmp.id  = 'page-jump-'+ipb_pages_shown;
+ipb_pages_array[ ipb_pages_shown ] = new Array( 'http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334', 15, 25 );
+menu_build_menu(
+	pgjmp.id,
+	new Array(  "--NODIV--<div onmouseover='pages_st_focus("+ipb_pages_shown+")' class='popupmenu-category' align='center'>Jump to Page</div>",
+				"<input type='text' size='5' name='st' id='st-"+ipb_pages_shown+"' /> <input type='button' class='button' onclick='do_multi_page_jump("+ipb_pages_shown+");' value='Go' />" ) );
+//]]>
+</SCRIPT>
+       </DIV></TD>
+    <TD class=nopad 
+    style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px" 
+    align=right width="70%"><!--IBF.QUICK_REPLY_CLOSED--><IMG 
+      alt="Closed Topic" src="Very Imp_files/t_closed.gif" border=0><A 
+      title="Start a new topic" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Post&amp;CODE=00&amp;f=37"><IMG 
+      alt="Start new topic" src="Very Imp_files/t_new.gif" 
+    border=0></A><!----></TD></TR></TBODY></TABLE>
+<DIV class=borderwrap style="PADDING-BOTTOM: 1px">
+<DIV class=formsubtitle 
+style="PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px">1 
+User(s) are reading this topic (1 Guests and 0 Anonymous Users)</DIV>
+<DIV class=row1 
+style="PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px">0 
+Members: </DIV></DIV><!--IBF.QUICK_REPLY_OPEN--><BR>
+<DIV class=borderwrap>
+<DIV class=row2 
+style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px">
+<DIV align=right>
+<FORM name=jumpmenu 
+onsubmit="if(document.jumpmenu.f.value == -1){return false;}" 
+action=http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=SF 
+method=get><INPUT type=hidden value=SF name=act> <INPUT type=hidden 
+value=f310e1c4f821185de90a2d41d1438472 name=s> <SELECT class=dropdown 
+onchange="if(this.options[this.selectedIndex].value != -1){ document.jumpmenu.submit() }" 
+name=f> <OPTGROUP label="Site Jump"> <OPTION value=sj_home>Forum 
+    Home</OPTION> <OPTION value=sj_search>Search</OPTION> <OPTION 
+    value=sj_help>Help</OPTION> </OPTGROUP> <OPTGROUP label="Forum Jump"><OPTION 
+    value=41>Operating Systems</OPTION> <OPTION value=5>&nbsp;&nbsp;|-- Windows 
+    XP, 2000, 2003, NT</OPTION> <OPTION value=3>&nbsp;&nbsp;|-- Windows 95, 98, 
+    ME</OPTION> <OPTION value=79>&nbsp;&nbsp;|-- Windows Vista</OPTION> <OPTION 
+    value=83>&nbsp;&nbsp;|---- Vista Screen Shots</OPTION> <OPTION 
+    value=103>&nbsp;&nbsp;|-- Windows Mobile and UMPC</OPTION> <OPTION 
+    value=7>&nbsp;&nbsp;|-- All Other Operating Systems</OPTION> <OPTION 
+    value=44>Internet</OPTION> <OPTION value=37 selected>&nbsp;&nbsp;|-- Malware 
+    Removal - HiJackThis Logs Go Here</OPTION> <OPTION value=26>&nbsp;&nbsp;|-- 
+    Internet and Browsers</OPTION> <OPTION value=28>&nbsp;&nbsp;|-- Web Design 
+    &amp; Web Hosting</OPTION> <OPTION value=96>&nbsp;&nbsp;|---- 
+    Critique/Show-off my site</OPTION> <OPTION value=40>Hardware</OPTION> 
+    <OPTION value=9>&nbsp;&nbsp;|-- Hardware, Components and 
+    Peripherals</OPTION> <OPTION value=27>&nbsp;&nbsp;|-- System Building and 
+    Upgrading</OPTION> <OPTION value=11>&nbsp;&nbsp;|-- Networking</OPTION> 
+    <OPTION value=42>Software</OPTION> <OPTION value=12>&nbsp;&nbsp;|-- 
+    Applications</OPTION> <OPTION value=25>&nbsp;&nbsp;|---- Microsoft 
+    Office</OPTION> <OPTION value=19>&nbsp;&nbsp;|-- Games</OPTION> <OPTION 
+    value=102>&nbsp;&nbsp;|---- Xbox360</OPTION> <OPTION 
+    value=60>&nbsp;&nbsp;|-- Programming (C#, C++, JAVA, VB, .NET 
+    etc...)</OPTION> <OPTION value=87>&nbsp;&nbsp;|-- Video Editing</OPTION> 
+    <OPTION value=43>Community</OPTION> <OPTION value=99>&nbsp;&nbsp;|-- How-To 
+    Guides and Tutorials</OPTION> <OPTION value=92>&nbsp;&nbsp;|-- 
+    Off-topic</OPTION> <OPTION value=94>&nbsp;&nbsp;|---- The Coffee 
+    Shop</OPTION> <OPTION value=95>&nbsp;&nbsp;|---- The Cyber Cafe</OPTION> 
+    <OPTION value=104>&nbsp;&nbsp;|------ Digg.com News Feed</OPTION> <OPTION 
+    value=15>&nbsp;&nbsp;|-- Comments and Suggestions</OPTION> <OPTION 
+    value=23>&nbsp;&nbsp;|-- News and Announcements</OPTION> <OPTION 
+    value=70>&nbsp;&nbsp;|-- Recycle Bin</OPTION> <OPTION 
+    value=68>&nbsp;&nbsp;|---- Software Updates</OPTION> <OPTION 
+    value=69>&nbsp;&nbsp;|------ Security Updates</OPTION> <OPTION 
+    value=62>&nbsp;&nbsp;|---- Lavasoft Support (Ad-aware)</OPTION> 
+</OPTGROUP></SELECT>&nbsp;<INPUT class=button type=submit value=Go></FORM></DIV></DIV></DIV><BR>
+<DIV class=borderwrap id=fc_stopics style="DISPLAY: none">
+<DIV class=maintitlecollapse>
+<P class=expand><A href="javascript:togglecategory('stopics',0);"><IMG 
+alt=Expand src="Very Imp_files/exp_plus.gif" border=0></A></P>
+<P><IMG height=8 alt=">" src="Very Imp_files/nav_m.gif" width=8 border=0> 
+Similar Topics</P></DIV></DIV>
+<DIV class=borderwrap id=fo_stopics>
+<DIV class=maintitle>
+<P class=expand><A href="javascript:togglecategory('stopics',1);"><IMG 
+alt=Collapse src="Very Imp_files/exp_minus.gif" border=0></A></P>
+<P><IMG height=8 alt=">" src="Very Imp_files/nav_m.gif" width=8 border=0> 
+Similar Topics</P></DIV>
+<TABLE class=ipbtable cellSpacing=1>
+  <TBODY>
+  <TR>
+    <TH width="50%">Topic Title</TD> 
+    <TH noWrap align=middle width="7%">Replies</TD> 
+    <TH noWrap align=middle width="14%">Topic Starter</TD> 
+    <TH noWrap align=middle width="7%">Views</TD> 
+    <TH noWrap width="22%">Last Action</TD> </TR>
+  <TR>
+    <TD class=row2><A title="This topic was started: Yesterday, 08:42 AM" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=104390">ME 
+      Start up problem</A></TD>
+    <TD class=row2 align=middle>1</TD>
+    <TD class=row2 align=middle><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=122462">packerbacker</A></A></TD>
+    <TD class=row2 align=middle>22</TD>
+    <TD class=row2><SPAN class=lastaction>27 minutes ago<BR><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=104390&amp;view=getlastpost">Last 
+      post by:</A> <A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=144048">Rvan801</A></A></SPAN></TD></TR>
+  <TR>
+    <TD class=row2><A title="This topic was started: Yesterday, 11:11 PM" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=104548">taskdir.exe 
+      malware problem</A></TD>
+    <TD class=row2 align=middle>0</TD>
+    <TD class=row2 align=middle><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=168370">timst4</A></A></TD>
+    <TD class=row2 align=middle>0</TD>
+    <TD class=row2><SPAN class=lastaction>Yesterday, 11:11 PM<BR><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=104548&amp;view=getlastpost">Last 
+      post by:</A> <A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=168370">timst4</A></A></SPAN></TD></TR>
+  <TR>
+    <TD class=row2><A title="This topic was started: Mar 22 2006, 09:58 PM" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=103853">winfixer&nbsp;[RESOLVED]</A></TD>
+    <TD class=row2 align=middle>10</TD>
+    <TD class=row2 align=middle><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=167826">kepkorn</A></A></TD>
+    <TD class=row2 align=middle>143</TD>
+    <TD class=row2><SPAN class=lastaction>Yesterday, 11:07 PM<BR><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=103853&amp;view=getlastpost">Last 
+      post by:</A> <A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=11524">Trevuren</A></A></SPAN></TD></TR>
+  <TR>
+    <TD class=row2><A title="This topic was started: Mar 2 2006, 05:23 AM" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=100249">Standby/sleep 
+      problem</A></TD>
+    <TD class=row2 align=middle>27</TD>
+    <TD class=row2 align=middle><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=152200">hempinBeeRad</A></A></TD>
+    <TD class=row2 align=middle>501</TD>
+    <TD class=row2><SPAN class=lastaction>Yesterday, 10:58 PM<BR><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=100249&amp;view=getlastpost">Last 
+      post by:</A> <A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=152200">hempinBeeRad</A></A></SPAN></TD></TR>
+  <TR>
+    <TD class=row2><A title="This topic was started: Yesterday, 09:04 PM" 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=104539">Starting 
+      up problem</A></TD>
+    <TD class=row2 align=middle>1</TD>
+    <TD class=row2 align=middle><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=22554">Gusman</A></A></TD>
+    <TD class=row2 align=middle>11</TD>
+    <TD class=row2><SPAN class=lastaction>Yesterday, 10:56 PM<BR><A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=104539&amp;view=getlastpost">Last 
+      post by:</A> <A 
+      href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showuser=38039">spike_hacker_inc</A></A></SPAN></TD></TR></TBODY></TABLE></DIV><BR><!-- NON JS STUFF -->
+<DIV id=topicoptionsjs><A name=topicdisplay></A>
+<DIV class=borderwrap>
+<DIV class=bar 
+style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center"><STRONG>Display 
+Mode:</STRONG> <STRONG><EM><A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;mode=linear">Standard</A></EM></STRONG> 
+· <A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;mode=linearplus">Switch 
+to: Linear+</A> · <A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;showtopic=10334&amp;mode=threaded">Switch 
+to: Outline</A> </DIV></DIV><BR><A name=topicoptions></A>
+<DIV class=borderwrap>
+<DIV class=bar 
+style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center"><A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=usercp&amp;CODE=start_subs&amp;method=topic&amp;tid=10334">Track 
+this topic</A> · <A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Forward&amp;f=37&amp;t=10334">Email 
+this topic</A> · <A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=Print&amp;client=printer&amp;f=37&amp;t=10334">Print 
+this topic</A> · <A 
+href="http://www.geekstogo.com/forum/index.php?s=f310e1c4f821185de90a2d41d1438472&amp;act=usercp&amp;CODE=start_subs&amp;method=forum&amp;fid=37">Subscribe 
+to this forum</A> </DIV></DIV><BR></DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+ document.getElementById('topicoptionsjs').style.display = 'none';
+ 
+ // Scroll to PID?
+ topic_scroll_to_post( parseInt("") );
+//]]>
+</SCRIPT>
+<!-- start Vibrant Media IntelliTXT Tooltip style sheet -->
+<STYLE type=text/css>.iTt {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: black 1px solid; PADDING-LEFT: 2px; FONT-WEIGHT: normal; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; BORDER-LEFT: black 1px solid; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: black 1px solid; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica; BACKGROUND-COLOR: lightyellow
+}
+</STYLE>
+<!-- end Vibrant Media IntelliTXT style sheet --><!-- start Vibrant Media IntelliTXT script section -->
+<SCRIPT src="Very Imp_files/front.asp" type=text/javascript></SCRIPT>
+<!-- end Vibrant Media IntelliTXT script section --><!-- google_ad_section_end -->
+<TABLE id=gfooter cellSpacing=0>
+  <TBODY>
+  <TR>
+    <TD width="45%"><IMG class=ipd id=rsssyndication alt=- 
+      src="Very Imp_files/rss.png" border=0>
+      <SCRIPT type=text/javascript>
+//<![CDATA[
+  menu_build_menu(
+  "rsssyndication",
+  new Array( "<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=25' style='color:black'>The Waiting Room Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=26' style='color:black'>Off-topic Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=23' style='color:black'>Video Editing Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=24' style='color:black'>How-To Guides and Tutorials Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=22' style='color:black'>Programming (C#, C++, JAVA, VB, .NET etc...) Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=21' style='color:black'>Games Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=10' style='color:black'>Windows XP, 2000, 2003, XT Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=11' style='color:black'>Windows 95, 98, ME Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=12' style='color:black'>Windows Vista Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=13' style='color:black'>All Other Operating Systems Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=14' style='color:black'>Remove Malware & Badware - HiJackThis Logs Go Here Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=20' style='color:black'>Applications Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=19' style='color:black'>Networking Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=15' style='color:black'>Internet and Browsers Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=16' style='color:black'>Web Design & Web Hosting Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=17' style='color:black'>Hardware, Components and Peripherals Forum</a>",
+"<a href='http://www.geekstogo.com/forum/index.php?act=rssout&amp;id=18' style='color:black'>System Building and Upgrading Forum</a>"
+           ) );
+//]]>
+</SCRIPT>
+       </TD>
+    <TD noWrap align=middle width="10%"><A 
+      href="http://www.geekstogo.com/forum/lofiversion/index.php/t10334.html"><B>Lo-Fi 
+      Version</B></A></TD>
+    <TD noWrap align=right width="45%">Time is now: 26th March 2006 - 12:13 
+    AM</TD></TR>
+  <TR>
+    <TD align=middle colSpan=3><EM>Invision Power Board skin developed by <A 
+      href="http://www.transversestyles.com/" target=_blank><STRONG>Transverse 
+      Styles</STRONG></A></EM></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+menu_do_global_init();//]]>
+</SCRIPT>
+<!-- Copyright Information -->
+<DIV class=copyright align=center><A style="TEXT-DECORATION: none" 
+href="http://www.invisionboard.com/" target=_blank>Invision Power Board</A> 
+v2.1.5 © 2006 &nbsp;IPS, Inc. </DIV><!-- / Copyright --></DIV></DIV>
+<DIV id=footer>
+<DIV id=footer-left><A href="http://www.transversestyles.com/" 
+target=_blank><IMG alt="" 
+src="Very Imp_files/footer_l.gif"></A></DIV></DIV></DIV><FONT 
+color=#dcdddf><I>The forum is run by volunteers who donate their time and 
+expertise. We make every attempt to ensure that the help and advice posted is 
+accurate and will not cause harm to your computer. However, we do not guarantee 
+that they are accurate and they are to be used at your own risk.</I><BR>
+<P><A href="http://www.tomcoyote.org/hjt/"><FONT color=#dcdddf>HijackThis Quick 
+Start</A></FONT> | <A title=eOutdoorsman.com href="http://www.eoutdoorsman.com/" 
+target=_blank><FONT color=#dcdddf>Outdoors Forum</FONT></A> | <A 
+title="Free Auto Repair Help Forum" href="http://www.greenflagauto.com/" 
+target=_blank><FONT color=#dcdddf>Auto Repair Forum</FONT></A> 
+<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 6px"></P>
+<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><FONT color=#dcdddf>©2003-2006 
+Geeks To Go, Inc. | All Rights Reserved | <A style="TEXT-DECORATION: underline" 
+href="http://www.geekstogo.com/articles.php?action=show&amp;id=5"><FONT 
+color=#dcdddf>Link to Us</FONT></A></FONT> </P><BR></FONT></BODY></HTML>

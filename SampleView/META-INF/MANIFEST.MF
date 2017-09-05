@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SampleView Plug-in
+Bundle-SymbolicName: SampleView; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: sampleView.SampleViewPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Eclipse-AutoStart: true
+Bundle-Vendor: Venkat Naidu

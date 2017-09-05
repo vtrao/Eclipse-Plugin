@@ -1,0 +1,72 @@
+A {
+	TEXT-DECORATION: none
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 22px; FONT-FAMILY: arial, sans-serif
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px; FONT-FAMILY: arial, sans-serif
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; FONT-FAMILY: arial, sans-serif
+}
+H4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: arial, sans-serif
+}
+H5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: arial, sans-serif
+}
+H6 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; MARGIN: 15px 0px; FONT-FAMILY: arial, sans-serif
+}
+.default {
+	FONT-SIZE: 16px; FONT-FAMILY: arial, sans-serif
+}
+.minusone {
+	FONT-SIZE: 14px; FONT-FAMILY: arial, sans-serif
+}
+.minusonesymbol {
+	FONT-SIZE: 14px; FONT-FAMILY: symbol
+}
+.minustwo {
+	FONT-SIZE: 11px; FONT-FAMILY: arial, sans-serif
+}
+.minustwosymbol {
+	FONT-SIZE: 11px; FONT-FAMILY: symbol
+}
+.nav {
+	FONT-SIZE: 13px; FONT-FAMILY: verdana, arial, helvetica, geneva
+}
+.searchbox {
+	FONT-SIZE: 10px; WIDTH: 90px; FONT-FAMILY: verdana, arial, helvetica, geneva; HEIGHT: 20px
+}
+.searchboxlarge {
+	FONT-SIZE: 10px; WIDTH: 120px; FONT-FAMILY: verdana, arial, helvetica, geneva; HEIGHT: 20px
+}
+.inputbox {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; WIDTH: 140px; FONT-FAMILY: arial, sans-serif
+}
+.descbox {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; WIDTH: 240px; FONT-FAMILY: arial, sans-serif; HEIGHT: 300px
+}
+.selecttext {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: arial, sans-serif
+}
+.editbox {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; WIDTH: 340px; FONT-FAMILY: arial, sans-serif
+}
+.headertext {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: arial, sans-serif
+}
+.admintd {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: arial
+}

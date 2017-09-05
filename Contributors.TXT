@@ -1,0 +1,28 @@
+venkatnaidu@users.sourceforge.net 
+
+
+   	  PROJECTS DONE AT International Institute of Information Technology Bangalore
+
+9 ########ECLIPSE PLUGIN DEVELOPMENT PROJECT:						
+
+		Title: ECLIPSE PLUGIN for a CASE STUDY		Status: STILL CAN BE EXTENDED FOR MORE REQUIREMENTS
+
+		Platform: Windows(XP)/Linux(SUSE)		Programming Language:  Java,Eclipse
+
+	Roll Number		Name				 Email-ID:
+	2005145          Venkata Thippanna Rao P  R              venkata.thippannarao@iiitb.ac.in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

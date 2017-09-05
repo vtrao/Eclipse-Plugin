@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Sample Category"
+            id="SampleView">
+      </category>
+      <view
+            name="Sample View"
+            icon="icons/sample.gif"
+            category="SampleView"
+            class="sampleView.views.SampleView"
+            id="sampleView.views.SampleView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="sampleView.views.SampleView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+         <editor 
+         	name="My Table Editor"
+         	icon="icons/sample.gif"
+         	extensions="yy"
+         	contributorClass="org.eclipse.ui.editors.text.TextEditorActionContr
+ibutor"
+         	class="org.eclipse.ui.editors.text.TextEditor"
+         	id="org.eclipse.ui.editors.text.texteditor">
+         </editor>    	
+   </extension>
+</plugin>

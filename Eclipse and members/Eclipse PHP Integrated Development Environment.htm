@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0041)http://www.eclipse.org/proposals/php-ide/ -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Eclipse PHP Integrated Development Environment</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="" name=author>
+<META content="" name=keywords><LINK media=screen 
+href="Eclipse PHP Integrated Development Environment_files/visual.css" 
+type=text/css rel=stylesheet><LINK media=screen 
+href="Eclipse PHP Integrated Development Environment_files/layout.css" 
+type=text/css rel=stylesheet>
+<STYLE>BODY {
+	BACKGROUND-IMAGE: url(/proposals/proposal.gif); BACKGROUND-REPEAT: repeat-y
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+
+sfHover = function() {
+	var sfEls = document.getElementById("leftnav").getElementsByTagName("LI");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=header><A href="http://www.eclipse.org/"><IMG class=logo height=68 
+alt="Eclipse Logo" 
+src="Eclipse PHP Integrated Development Environment_files/header_logo.gif" 
+width=163 border=0></A> 
+<DIV id=searchbar><IMG class=transition height=26 alt="" 
+src="Eclipse PHP Integrated Development Environment_files/searchbar_transition.gif" 
+width=92> <IMG class=header height=17 alt=Search 
+src="Eclipse PHP Integrated Development Environment_files/searchbar_header.gif" 
+width=64> 
+<FORM action=/search/search.cgi method=get><INPUT type=hidden value=All name=t> 
+<INPUT type=hidden value=Doc name=t> <INPUT type=hidden value=Downloads name=t> 
+<INPUT type=hidden value=Wiki name=t> <INPUT type=hidden value=574a74 name=wf> 
+<INPUT name=q> <INPUT class=button onclick=this.submit(); type=image alt=Submit 
+src="Eclipse PHP Integrated Development Environment_files/searchbar_submit.gif"> 
+</FORM></DIV>
+<UL id=headernav>
+  <LI class=first><A 
+  href="http://www.eclipse.org/org/foundation/contact.php">Contact</A> </LI>
+  <LI><A href="http://www.eclipse.org/legal/">Legal</A> </LI></UL></DIV>
+<DIV id=topnav>
+<UL>
+  <LI><A>Eclipse.org navigation</A> </LI>
+  <LI class=tabstart>&nbsp;&nbsp;&nbsp; </LI>
+  <LI><A class="" href="http://www.eclipse.org/" target=_self>Home</A> </LI>
+  <LI class=tabstart>&nbsp;&nbsp;&nbsp; </LI>
+  <LI><A class="" href="http://www.eclipse.org/community/" 
+  target=_self>Community</A> </LI>
+  <LI class=tabstart>&nbsp;&nbsp;&nbsp; </LI>
+  <LI><A class="" href="http://www.eclipse.org/membership/" 
+  target=_self>Membership</A> </LI>
+  <LI class=tabstart>&nbsp;&nbsp;&nbsp; </LI>
+  <LI><A class="" href="http://www.eclipse.org/downloads/" 
+  target=_self>Downloads</A> </LI>
+  <LI class=tabstart>&nbsp;&nbsp;&nbsp; </LI>
+  <LI><A class="" href="http://www.eclipse.org/projects/" 
+  target=_self>Projects</A> </LI>
+  <LI class=tabstart>&nbsp;&nbsp;&nbsp; </LI>
+  <LI><A class="" href="http://www.eclipse.org/org/" target=_self>About Us</A> 
+  </LI>
+  <LI class=tabseparator>&nbsp;&nbsp;&nbsp; </LI></UL></DIV>
+<DIV id=topnavsep></DIV>
+<DIV id=leftcol>
+<UL id=leftnav>
+  <LI><A href="http://dev.eclipse.org/">Committers</A> </LI>
+  <LI><A href="http://www.eclipse.org/newsgroups/">Newsgroups</A> </LI>
+  <LI><A href="https://bugs.eclipse.org/bugs/">Bugs</A> </LI>
+  <LI><A href="http://www.eclipse.org/articles/">Articles</A> </LI>
+  <LI class=separator><A class=separator>Links &nbsp;&nbsp;<IMG alt="" 
+  src="Eclipse PHP Integrated Development Environment_files/leftnav_bullet_down.gif" 
+  border=0></A> </LI>
+  <LI><A href="http://www.eclipse.org/proposals/">Proposals</A> </LI>
+  <LI 
+  style="BACKGROUND-IMAGE: url(/eclipse.org-common/themes/Phoenix/images/leftnav_fade.jpg); BORDER-TOP-STYLE: none; BACKGROUND-REPEAT: repeat-x; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none"><BR><BR><BR><BR><BR></LI></UL></DIV>
+<DIV id=maincontent>
+<DIV id=midcolumn>
+<H1>Eclipse PHP Integrated Development Environment</H1><BR>
+<P align=center><FONT size=+1><A 
+href="http://www.eclipse.org/projects/">Creation Review</A> is scheduled for <A 
+href="http://www.timeanddate.com/worldclock/fixedtime.html?month=3&amp;day=8&amp;year=2006&amp;hour=17&amp;min=00&amp;sec=0&amp;p1=0">Wed, 
+08 Mar 2006 at 1700 UTC</A></FONT></P>
+<P></P>
+<H1>Introduction</H1>
+<P>The PHP IDE Project is a proposed open-source project under the Eclipse Tools 
+Project. This document describes the content and the scope of the proposed 
+project.</P>
+<P>This proposal is in the <A 
+href="http://www.eclipse.org/projects/dev_process/proposal-phase.php">Project 
+Proposal Phase</A> and is written to declare its intent and scope. This proposal 
+is written to solicit additional participation and input from the Eclipse 
+community. You are invited to comment on and/or join the project. Please send 
+all feedback to the <A 
+href="news://news.eclipse.org/eclipse.tools.php">news://news.eclipse.org/eclipse.tools.php</A> 
+newsgroup.
+<P>
+<H1>Background</H1>
+<P>PHP started as an open source project about 10 years ago. During the last 10 
+years, PHP has gained significant momentum with now more than 23 million Web 
+domains running PHP. PHP’s simplicity and low cost of ownership have all 
+contributed to the fast and wide adoption of the language. PHP has now reached 
+the point of maturity where organizations are seeking standard tools and 
+solutions that will further facilitate application development with PHP.</P>
+<H1>Project Goal</H1>
+<P>The PHP IDE project will deliver a PHP Integrated Development Environment 
+framework for the Eclipse platform. This project will encompass the development 
+components necessary to develop PHP-based Web Applications and will facilitate 
+extensibility. It will leverage the existing Web Tools Project in providing 
+developers with PHP capabilities. </P>
+<H1>Project Scope</H1>
+<P>The project will contribute an initial set of Eclipse plug-ins that will add 
+PHP IDE capabilities to Eclipse, and will provide APIs to further extend the 
+functionality of the project. The project will be composed of a set of 
+extensible features covering the development life cycle of PHP including 
+functionality that deals with developing, deploying, documenting, debugging and 
+testing PHP-based applications. </P>
+<P>The next section describes in detail the design, features and extension 
+points needed in order to provide a comprehensive IDE. </P>
+<H1>Project Description</H1>
+<H2>Functional Requirements</H2>The PHP IDE Project will include the following 
+components: 
+<H3>PHP IDE Core</H3>The PHP IDE Core provides the infrastructure for the PHP 
+IDE and includes: 
+<UL>
+  <LI>PHP Language Model - provides infrastructure for the PHP language and the 
+  most popular extensions. This Core component is the basis of all PHP language 
+  classes, functions and constants and it will support both PHP 4 and PHP 5. The 
+  two PHP major versions support will affect the code assist, syntax coloring 
+  and PHP Functions view. 
+  <LI>PHP Inspector / Code Builder - analyzes PHP language elements such as: 
+  classes, functions, constants, variables, include statements, PHPDoc blocks 
+  and errors. The PHP Inspector component is based on the PHP language Lexer and 
+  Parser and provides analysis for all PHP source code in either PHP 4 or PHP 5. 
+
+  <LI>PHPDoc Support - provides infrastructure that helps overcome some of the 
+  PHP language complexities. It adds capabilities to the PHP Language model and 
+  the PHP Inspector. 
+  <LI>PHP User Model - provides an API for navigating through PHP inspected data 
+  (PHP classes, functions, constants, variables and include statements). Used by 
+  the search engine, Code Assist and PHP Explorer View. 
+  <LI>PHP Source Code Formatter - Format PHP code according to personal 
+  preferences. The tool works in tandem with the Web Tools Project formatter. 
+  </LI></UL>
+<H3>PHP IDE UI</H3>The PHP IDE UI provides the user interface for the PHP IDE. 
+It includes several contributions to the Eclipse workbench: 
+<UL>
+  <LI>PHP Editor – The PHP Editor is built over the Web Tools Structured Editor 
+  and should inherit all its capabilities and actions. The PHP as a Structured 
+  Editor allows working on more then one programming language at the same time. 
+  All features in the PHP Editor support both PHP 4 and PHP 5. 
+  <LI>PHP Outline View – Supports two types of Outline Views:
+  <UL>
+    <LI>PHP specific - shows the structure of an inspected PHP file (classes, 
+    functions, variables, include files and constants). 
+    <LI>Generic web view - shows an HTML structural View – inherited from the 
+    Web Tools Project. </LI></UL>
+  <LI>Project Outline View - Very similar to the Outline View except that it 
+  shows the structure of an entire PHP Project. 
+  <LI>PHP Explorer View - PHP element hierarchy of the PHP projects in the 
+  workbench. It provides a PHP specific view of the resources shown in the 
+  Navigator. 
+  <LI>PHP Language View - A graphical representation of the PHP language Model. 
+  <LI>PHP Manual View - An offline view of the official PHP Manual 
+  (http://www.php.net/download-docs.php). </LI></UL>The UI will also provide the 
+following functionalities: 
+<UL>
+  <LI>PHP Searching – Integrated in the Eclipse workbench’s search dialog, finds 
+  declarations of PHP classes, functions, constants and variables. 
+  <LI>Open PHP Type Dialog - Similar to JDT’s open Type dialog, the PHP open 
+  type dialog will show all PHP types in the workspace in order to open the 
+  selected type in the Editor. </LI></UL>
+<H3>PHP IDE Debug</H3>The PHP IDE debug provides the infrastructure for PHP 
+debugging, implemented on top of the debug model provided by the Eclipse 
+Platform Debugger and on top of the Web Tools Projects. The PHP IDE will support 
+both types of PHP Servers: PHP local web server and PHP executable. The debug 
+protocol is based on Zend Studio’s debug protocol with extension points for new 
+protocol messages. 
+<H4>Debug Perspective</H4>The Debug Perspective will be based on the Eclipse 
+Debug Perspective with compliance to the relevant PHP Debug actions. The 
+perspective will contain the standard debug views. 
+<H4>Debug Preview </H4>The Preview view will display what will be rendered on 
+the browser as a result of processing the PHP file that is being edited. This 
+will be part of a Multi-Page Editor, which will contain a Source page and a 
+Preview page aggregated in a Tabbed Container. 
+<H2>Extension Points</H2>The following list is work in progress and will most 
+likely expand as requirements are identified. The PHP IDE project will provide 
+extension points to facilitate the extensibility of the project. The extensions 
+points will provide the ability to 
+<UL>
+  <LI>Extend the debug communication protocol, between the PHP IDE and the Web 
+  Server, with new messages. This will enable to increase the debugging 
+  capabilities with new features and functions. 
+  <LI>Integrate additional PHP builders. 
+  <LI>Extend the PHP data models by providing new data model that will reflect 
+  code assist and outline view. 
+  <LI>Launch of a PHP project on any Web server. </LI></UL>In addition, the PHP 
+IDE project will define several extension points to enhance the PHP Editor. The 
+extensions points will provide the ability to 
+<UL>
+  <LI>Add new folding structured (regions) for the PHP Editor (similar to 
+  org.eclipse.jdt.ui.foldingStructureProviders) 
+  <LI>Enhance the PHP IDE with new text hover to the PHP Editor </LI></UL><IMG 
+src="Eclipse PHP Integrated Development Environment_files/picture1.gif"><BR>
+<P>The PHP IDE project will be built using several Eclipse Web Tools Platform 
+(WTP) project components. The WTP provide generic, extensible and 
+standards-based tools for Web-centric application development. It provides 
+editors for various Web centric languages such as: HTML, CSS, JavaScript, WSDL, 
+etc. In addition, WTP provides facilities for configuring and connecting to Web 
+Servers. The PHP IDE will use the WTP Server facilities to manage and configure 
+Web Servers. PHP IDE project will benefit from the client web development 
+support, already available in the WTP (HTML, CSS, etc) and will add the server 
+side web development support (PHP). The integration between the PHP IDE and WTP 
+will provide the PHP IDE’s users with a comprehensive solution for WEB 
+development. </P>
+<P>Main plug-ins: 
+<UL>
+  <LI>PHP Editor, will extend the WTP’s Structure Editor. The Editor will add 
+  PHP support to the Structured Editor using PHP Lexical Analyzer for the PHP 
+  language. The use of the WTP’s Structure Editor as a baseline for the extended 
+  functionality will provide the PHP developer with the benefits and 
+  capabilities that are already available with the WTP editor. 
+  <LI>Debugger - The debugger communication protocol between the IDE and the 
+  server side in the PHP IDE will be based on Zend’s proven debugging protocol. 
+  This protocol defines the agreed-upon format for transmitting data between 
+  both the server and the client side in order to facilitate debugging of a PHP 
+  application. The debug protocol will support PHP web server debugging and PHP 
+  stand-alone application debugging. Debug initiation will be done through an 
+  HTTP request made to the debugger server side, then the debugger server will 
+  open a communication channel to the PHP IDE to start debugging communication. 
+  <LI>Inspection – The PHP IDE will make use of an existing Zend inspection 
+  model and tool for parsing PHP code. The PHP parser establishes a model 
+  constructed by file data for each of the project files. Each file’s data 
+  includes: classes, functions, constants, errors and include file data. The 
+  model is used for Code Assist, Outline View, Project Outline View and PHP 
+  Explorer View. The model is updated while you type in the editor and for every 
+  change in the PHP Project’s structure. </LI></UL>
+<H1>Code contributions</H1>Zend and IBM will be making an initial code 
+contribution that will encompass the core functionality for the PHP project 
+including: 
+<UL>
+  <LI>High-quality and proven PHP model infrastructure incl. editor, syntax 
+  highlighting, code completion, and PHP explorer 
+  <LI>PHP perspectives 
+  <LI>PHP debugging capabilities </LI></UL>
+<H1>Development Plan</H1>We plan to have an initial prototype version available 
+by the end of Q1/2006. After the availability of the initial version we will 
+work on incorporating changes and feedback as needed and strive to release the 
+first functional version as early as possible. 
+<H1>Organization</H1>
+<H2>Project Leads</H2>The project leads will be initially the following people: 
+<UL>
+  <LI>Guy Harpaz, Zend (guy@zend.com) 
+  <LI>Robert Goodman,IBM (goodmanr@us.ibm.com) </LI></UL>
+<H2>Interested Parties</H2>Support has been expressed by: 
+<UL>
+  <LI>Actuate 
+  <LI>IBM 
+  <LI>Intel 
+  <LI>SAP 
+  <LI>Zend </LI></UL>
+<H2>Potential Committers </H2>
+<UL>
+  <LI>Guy Harpaz, Zend (guy@zend.com) 
+  <LI>Yossi Leon, Zend (yossi@zend.com) 
+  <LI>Shachar Ben-Zeev Zend (shachar@zend.com) 
+  <LI>Shalom Gibly, Zend (shalom@zend.com) 
+  <LI>Guy Gurfinkel, Zend (guy.g@zend.com) 
+  <LI>Alik Elzin, Zend (alik@zend.com) 
+  <LI>Michael Spector, Zend (michael@zend.com) 
+  <LI>Robert Goodman,IBM (goodmanr@us.ibm.com) 
+  <LI>Brian Burns, IBM (bburns@us.ibm.com) 
+  <LI>Phil Berkland, IBM (berkland@us.ibm.com) </LI></UL>
+<P>&nbsp;</P></DIV></DIV>
+<DIV id=footer>
+<UL id=footernav>
+  <LI class=first><A href="http://www.eclipse.org/">Home</A> </LI>
+  <LI><A href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</A> 
+</LI>
+  <LI><A href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</A> 
+  </LI></UL>
+<P>Copyright © 2005 The Eclipse Foundation. All Rights 
+Reserved</P></DIV></BODY></HTML>
